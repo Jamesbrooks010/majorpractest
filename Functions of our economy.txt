@@ -1,0 +1,13 @@
+economy should be able to 
+
+1. allow customers to take out financial products and hold cash while repaying over a certain amount of time 
+2. change interest rates dependent on the levels of debt to savings in the economy 
+3. allow institutions to change their local interest rates dependent on whether or not there is a cash surplus of high amounts of debt 
+
+4. allow for the issuing of insurance contracts 
+5. create some amount of customers and run through different scenarios within the economy I.e Bankruptcy shocks, high amounts of cash 
+
+6. hold the list of customers. 
+
+ 
+
