@@ -3,7 +3,7 @@
 
 #include<string> 
 
-class economy 
+class Economy 
 { 
 	static int timeperiod; //time period the economy is in, begining 0?, 1 , 2 , 3, 4, ::could be interpreted as years of quaters??
 	std::string name; // name of economy i.e australia, america 
@@ -13,6 +13,13 @@ class economy
 	
 public: 
 	//functions still to be decided 
+	Economy();
+	Economy(std::string); 
+
+	int interestrateset(); 
+	
+
+
 
 }
 
