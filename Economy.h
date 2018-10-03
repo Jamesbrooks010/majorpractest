@@ -11,6 +11,9 @@ class economy
 	double aggdebt; 
 	int vineschukd;
 
+
+	double testingagain; 
+	
 public: 
 	
 }
