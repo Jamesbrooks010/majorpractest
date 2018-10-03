@@ -9,11 +9,8 @@ class economy
 	int interestrate; 
 	double aggsav; 
 	double aggdebt; 
-	int vineschukd;
-
-
-	double testingagain; 
 	
 public: 
+	//functions still to be decided 
 	
 }
