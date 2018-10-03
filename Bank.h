@@ -7,7 +7,13 @@
 class Bank : public Economy
 {
 	int bankinterestrate; 
+	std::string name; 
 	//will need to include pointer to an array of customers 
+	double aggbankdebt;  
+	double aggbankcash; 
+	double profits; 
+	double baddebts; 
 
-	
 } 
+
+#endif 
