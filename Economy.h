@@ -9,7 +9,7 @@ class economy
 	int interestrate; 
 	double aggsav; 
 	double aggdebt; 
-	
+	int vineschukd;
 
 public: 
 	
