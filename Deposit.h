@@ -7,6 +7,13 @@ class Deposit : public Financialproduct
 	std::string description;
 	int deposit_interest_rate;
 public:
+	
+	//default constructor
+	Deposit();
+	//set constructor
+	Deposit(std::string Ddescription, int Ddeposit_interest_rate);
+
+
 	//getters
 	int get_interest_rate();
 	double get_deposit_value();

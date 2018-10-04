@@ -15,7 +15,8 @@ public:
 	Customer();
 	Customer(double Cwage, double Ccash, double Cdebt);
 	//setters
-	void add_new_product(Financialproduct* Cproduct);
+	void add_new_product(Financialproduct Cproduct);
+	double print();
 	//deleters//
 	~Customer();
 

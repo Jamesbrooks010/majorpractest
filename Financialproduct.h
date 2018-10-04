@@ -15,9 +15,10 @@ protected: //allows below to be accessed by child class (which will be the type 
 
 
 	//interest rate premium could be left to subclass- contingent on your thoughts on this james??
-	//int interestratepremium; // premium charged on global economy interest rate, term deposit lower, interest rate subject to bankruptcy and or event risk 
-
-
+	//!!!!!!!!!!!!!!!!  int interestratepremium; // premium charged on global economy interest rate, term deposit lower, interest rate subject to bankruptcy and or event risk 
+public:
+	Financialproduct();
+	Financialproduct(std::string Fname,double Fpvalue, double Ffvalue, int Ftermduration);
 
 };
 #endif

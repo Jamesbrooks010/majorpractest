@@ -10,16 +10,16 @@ Customer::Customer()
 	financialheld=new Financialproduct[10];
 
 }
-Customer::Customer(Cwage, Ccash, Cdebt)
+Customer::Customer(double Cwage, double Ccash, double Cdebt)
 {
 	wage=Cwage;
-	cash=Ccase;
+	cash=Ccash;
 	debt=Cdebt;
 	financialheld=new Financialproduct[10];
 }
 
 //financial product adder
-void Customer::add_new_product(Cproduct)
+void Customer::add_new_product(Financialproduct Cproduct)
 {
 	int i=0;
 	if(i>=10)
@@ -31,6 +31,10 @@ void Customer::add_new_product(Cproduct)
 		financialheld[i]=Cproduct;
 	}
 	i++;
+}
+double Customer::print()
+{
+	cout<<cash;
 }
 
 Customer::~Customer()
