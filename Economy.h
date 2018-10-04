@@ -22,9 +22,9 @@ public:
 	double get_aggsav(); //returns aggregated savings
 	double get_aggdebt(); //returns aggregated debts
 
-	~Economy()
+	~Economy(); 
 
 
-}
+}; 
 
 #endif
