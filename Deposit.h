@@ -16,7 +16,6 @@ public:
 
 	//getters
 	int get_interest_rate();
-	double get_deposit_value();
 	//setters//
 	void set_interest_rate();
 	//deleters
