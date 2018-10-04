@@ -1,7 +1,7 @@
 #ifndef ECONOMY_H
 #define ECONOMY_H
 
-#include<string> 
+#include <string> 
 
 class Economy 
 { 
@@ -15,9 +15,13 @@ public:
 	//functions still to be decided 
 	Economy();
 	Economy(std::string); 
-
+//setters
 	int interestrateset(); 
-	
+//getters
+	int get_interestrate(); //returns interest rate
+	double get_aggsav(); //returns aggregated savings
+	double get_aggdebt(); //returns aggregated debts
+
 
 
 
