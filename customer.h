@@ -1,11 +1,16 @@
 #ifndef CUSTOMER_H 
 #define CUSTOMER_H 
 #include "Financialproduct.h"
+#include "Deposit.h"
+//#include "Insurance.h"
+//#include "Loan.h"
 #include <string>
 
 
 class Customer 
-{ 
+{
+	int id;
+	std::string name;
 	double wage; //wage earned per time period which can be used to pay off loan or contribute to cash, term deposit financial product 
 	double cash; //cash held not earning interest 
 	double debt; //debt held to be repaid with interest
@@ -15,7 +20,7 @@ public:
 	Customer();
 	Customer(double Cwage, double Ccash, double Cdebt);
 	//setters
-	void add_new_product(Financialproduct* Cproduct);
+	void add_new_product(std::string Cname, double Cpvalue, int Cterm);
 	//deleters//
 	~Customer();
 
