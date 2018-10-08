@@ -1,5 +1,6 @@
 #include "Financialproduct.h"
 
+
 //default constructor
 Financialproduct::Financialproduct()
 {

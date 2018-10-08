@@ -19,23 +19,49 @@ Customer::Customer(double Cwage, double Ccash, double Cdebt)
 }
 
 //financial product adder
-void Customer::add_new_product(Financialproduct Cproduct)
+void Customer::add_new_product(string Cname, double Cpvalue, int Cterm)
 {
-	int i=0;
-	if(i>=10)
+
+	if(Cname=="Deposit" || Cname=="deposit")
 	{
-		cout<<"you have reached your product maximum";
+		Deposit name;
+		name.set_name(Cname);
+		name.set_pvalue(Cpvalue);
+		name.set_term(Cterm);
+		cout<<"A "<<Cname<<" has been successfully purchased";
 	}
-	while(i<10)
+	/*
+	else if(Cname=="Deposit" || Cname="deposit")
+	{	
+		Deposit name;
+		name.set_name(Cname);
+		name.set_pvalue(Cpvalue);
+		name.set_term(Cterm);	
+		cout<<"A "<<Cname<<" has been successfully purchased";
+	}
+	else if(Cname=="Insurance" || Cname="insurance")
 	{
-		financialheld[i]=Cproduct;
+		Insurance name;
+		name.set_name(Cname);
+		name.set_pvalue(Cpvalue);
+		name.set_term(Cterm);
+		cout<<"A "<<Cname<<" has been successfully purchased";
 	}
-	i++;
+	/**/
+	else
+	{
+		cout<<"error, product not available";
+	}
 }
+
+
+
+/*
 double Customer::print()
 {
 	cout<<cash;
 }
+/**/
 
 Customer::~Customer()
 {
