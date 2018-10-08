@@ -13,11 +13,16 @@ protected: //allows below to be accessed by child class (which will be the type 
 	double finalvalue;  //final value, for loan = 0 , for term deposit = 20,000 + interest
 	int termduration; // duration i.e twenty time periods or thirty
 
-
-	//interest rate premium could be left to subclass- contingent on your thoughts on this james??
-	//!!!!!!!!!!!!!!!!  int interestratepremium; // premium charged on global economy interest rate, term deposit lower, interest rate subject to bankruptcy and or event risk 
+	
+	void set_name(std::string Sname);
+	void set_pvalue(double Spvalue);
+	void set_fvalue(double Sfinalvalue);
+	void set_term(int Stermduration);
+	~Financialproduct();
 public:
 	Financialproduct();
-	Financialproduct(std::string Fname,double Fpvalue, double Ffvalue, int Ftermduration);
+	Financialproduct(std::string Fname, double Fpvalue, double Ffvalue, int Ftermduration);
+	
+	double get_value();
 };
 #endif

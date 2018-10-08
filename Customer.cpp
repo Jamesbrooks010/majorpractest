@@ -40,4 +40,5 @@ double Customer::print()
 Customer::~Customer()
 {
 	//deleteds
+	
 }
