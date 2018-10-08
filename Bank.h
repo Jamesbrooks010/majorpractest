@@ -1,7 +1,7 @@
-#ifndef BANK_H
+ #ifndef BANK_H
 #define BANK_H 
 #include <string> 
-#include "Customer.h"
+#include "Customer.h" 
 #include "Economy.h"
 
 class Bank// : public Economy  ____ unsure if inheriting anything from economy or not

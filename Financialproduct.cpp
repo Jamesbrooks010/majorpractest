@@ -22,7 +22,7 @@ Financialproduct::Financialproduct(std::string Fname,double Fpvalue, double Ffva
 //return value to illustate polymorphism
 double Financialproduct::get_value()
 {
-	return finalvalue;
+	return principalvalue;
 }
 
 

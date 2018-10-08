@@ -12,6 +12,8 @@ int main(void)
 	cout<<connor.get_value();
 
 	Deposit james("a good investment", 10);
+	james.set_pvalue(19);
+	cout<<james.get_value();
 
 }
 
