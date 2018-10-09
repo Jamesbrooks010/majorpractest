@@ -4,31 +4,34 @@ using namespace std;
  
 Customer::Customer()
 {
+	name="?";
 	wage=0;
 	cash=0;
 	debt=0;
-	financialheld=new Financialproduct[10];
+	financialheld;
 
 }
-Customer::Customer(double Cwage, double Ccash, double Cdebt)
+Customer::Customer(string Cname, double Cwage, double Ccash, double Cdebt)
 {
+	name=Cname;
 	wage=Cwage;
 	cash=Ccash;
 	debt=Cdebt;
-	financialheld=new Financialproduct[10];
-}
+}	
 
 //financial product adder
-void Customer::add_new_product(string Cname, double Cpvalue, int Cterm)
+void Customer::add_new_product(string CPname, Bank bank_name, double Cpvalue, int Cterm)
 {
 
-	if(Cname=="Deposit" || Cname=="deposit")
+	if(CPname=="Deposit" || CPname=="deposit")
 	{
 		Deposit name;
-		name.set_name(Cname);
+		name.set_name(CPname);
 		name.set_pvalue(Cpvalue);
 		name.set_term(Cterm);
-		cout<<"A "<<Cname<<" has been successfully purchased";
+		name.set_bank(bank_name);
+		financialheld.push_back(name); //placing name on to vectord
+		cout<<"Thankyou a "<<CPname<<" has been successfully purchased"<<'/n';
 	}
 	/*
 	else if(Cname=="Deposit" || Cname="deposit")
