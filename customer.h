@@ -4,9 +4,10 @@
 #include "Deposit.h"
 //#include "Insurance.h"
 //#include "Loan.h"
+#include <iostream>
 #include <string>
 #include <vector> //including vector to allocate customer
-#include "Bank.h"
+//#include "Bank.h"
 
 class Customer 
 {
@@ -21,7 +22,7 @@ public:
 	Customer();
 	Customer(std::string Cname, double Cwage, double Ccash, double Cdebt);
 	//setters
-	void add_new_product(std::string CPname,Bank* bank_name, double Cpvalue, int Cterm);
+	void add_new_product(std::string CPname, double Cpvalue, int Cterm);
 	//deleters//
 	~Customer();
 
