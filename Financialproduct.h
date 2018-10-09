@@ -16,7 +16,7 @@ protected: //allows below to be accessed by child class (which will be the type 
 	
 public:
 	Financialproduct();
-	Financialproduct(std::string Fname, double Fpvalue, double Ffvalue, int Ftermduration, Bank* Ffinancial_provider);
+	Financialproduct(std::string Fname, double Fpvalue, double Ffvalue, int Ftermduration);
 
 	void set_name(std::string Sname);
 	void set_pvalue(double Spvalue);

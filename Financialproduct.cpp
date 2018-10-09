@@ -8,12 +8,9 @@ Financialproduct::Financialproduct()
 	principalvalue=0;
 	finalvalue=0;
 	termduration=0;
-	//bank=????
 }
 
-//specific constru tor
-
-Financialproduct::Financialproduct(std::string Fname,double Fpvalue, double Ffvalue, int Ftermduration, Bank* Ffinancial_provider)
+Financialproduct::Financialproduct(std::string Fname,double Fpvalue, double Ffvalue, int Ftermduration)
 {
 	name=Fname;
 	principalvalue=Fpvalue;
