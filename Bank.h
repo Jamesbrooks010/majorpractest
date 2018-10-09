@@ -3,6 +3,7 @@
 #include <string> 
 #include "Customer.h" 
 #include "Economy.h"
+#include "Financialproduct.h"
 #include <vector>
 class Bank// : public Economy  ____ unsure if inheriting anything from economy or not
 {

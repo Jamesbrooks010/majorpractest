@@ -9,6 +9,17 @@ economy should be able to
 
 6. hold the list of customers. 
 
+------------------------------------------------------------------------------
+needs to be done:
+Finanical product
+-creation of insurance and loan
+Economy
+-coordinating interaction with bank
+Bank
+-aggregating debts
+-aggregating savings
+-profit
+-applying interest rate and crediting (or debiting) to customer
 
 
 

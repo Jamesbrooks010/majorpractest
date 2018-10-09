@@ -8,7 +8,7 @@ Financialproduct::Financialproduct()
 	principalvalue=0;
 	finalvalue=0;
 	termduration=0;
-	bank=????
+	//bank=????
 }
 
 //specific constru tor
@@ -19,7 +19,7 @@ Financialproduct::Financialproduct(std::string Fname,double Fpvalue, double Ffva
 	principalvalue=Fpvalue;
 	finalvalue=Ffvalue;
 	termduration=Ftermduration;
-	financial_provider=Ffinancial_provider;
+	
 }
 
 //return value to illustate polymorphism
@@ -49,10 +49,12 @@ void Financialproduct::set_term(int Stermduration)
 {
 	termduration=Stermduration;
 }
+/*
 void Financialproduct::set_bank(Bank* bank_name)
 {
 	financial_provider=bank_name;
 }
+/**/
 
 
 
