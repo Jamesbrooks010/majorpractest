@@ -22,6 +22,7 @@ public:
 	void set_pvalue(double Spvalue);
 	void set_fvalue(double Sfinalvalue);
 	void set_term(int Stermduration);
+	std::string get_name();
 	//void set_bank(Bank* Sfinancial_provider);
 	//testing function
 	double get_value();

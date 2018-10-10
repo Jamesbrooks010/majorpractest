@@ -2,8 +2,8 @@
 #define BANK_H 
 #include <string> 
 #include "Customer.h" 
-#include "Economy.h"
-#include "Financialproduct.h"
+//#include "Economy.h"
+//#include "Financialproduct.h"
 #include <vector>
 class Bank// : public Economy  ____ unsure if inheriting anything from economy or not
 {
@@ -15,7 +15,8 @@ class Bank// : public Economy  ____ unsure if inheriting anything from economy o
 public:
 	Bank();
 	Bank(std::string Bname);
-	void add_customer(Customer* Bcustomer);
+	void print_customer();
+	void add_customer(Customer Bcustomer);
 	~Bank();
 	//this will be the input that allows for customers to extend a new product
 

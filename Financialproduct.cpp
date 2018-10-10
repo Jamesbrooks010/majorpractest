@@ -1,5 +1,6 @@
 #include "Financialproduct.h"
-
+#include <string>
+using namespace std;
 
 //default constructor
 Financialproduct::Financialproduct()
@@ -45,6 +46,10 @@ void Financialproduct::set_fvalue(double Sfvalue)
 void Financialproduct::set_term(int Stermduration)
 {
 	termduration=Stermduration;
+}
+string Financialproduct::get_name()
+{
+	return name;
 }
 /*
 void Financialproduct::set_bank(Bank* bank_name)
