@@ -5,12 +5,11 @@
 
 class Insurance : public Financialproduct
 {
-	std::string description;
 	int insurance_premium;
 public:
 	//constructor
 	Insurance();
-
+	Insurance(int I_premium);
 //deleterer
 	~Insurance();
 
