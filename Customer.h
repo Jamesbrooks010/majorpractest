@@ -24,7 +24,7 @@ public:
 	Customer();
 	Customer(std::string Cname, double Cwage, double Ccash, double Cdebt);
 	//setters
-	void add_new_product(std::string accname, Bank bankname, std::string CPname, double Cpvalue, int Cterm);
+	void add_new_product(Financialproduct accname, Bank bankname, std::string CPname, double Cpvalue, int Cterm);
 	//deleters//
 	void print_list();
 	double returncash(); 

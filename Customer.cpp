@@ -23,7 +23,7 @@ Customer::Customer(string Cname, double Cwage, double Ccash, double Cdebt)
 }	
 
 //financial product adder
-void Customer::add_new_product(string accname, Bank bankname, string CPname, double Cpvalue, double Cfvalue, int Cterm)
+void Customer::add_new_product(Financialproduct accname, Bank bankname, string CPname, double Cpvalue, double Cfvalue, int Cterm)
 {
 
 	if (CPname=="Deposit" || CPname=="deposit")
