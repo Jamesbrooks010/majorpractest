@@ -29,10 +29,10 @@ void Customer::add_new_product(string accname, Bank bankname, string CPname, dou
 	if (CPname=="Deposit" || CPname=="deposit")
 	{
 		Deposit accname;
-		name.set_name(CPname);
-		name.set_pvalue(Cpvalue);
-		name.set_fvalue(Cfvalue); 
-		name.set_term(Cterm);
+		accname.set_name(CPname);
+		accname.set_pvalue(Cpvalue);
+		accname.set_fvalue(Cfvalue); 
+		accname.set_term(Cterm);
 		//name.set_bank(bank_name);
 		financialheld.push_back(name); //placing name on to vectord
 		cout<<"Thankyou a "<<CPname<<" has been successfully purchased"<<'\n';
