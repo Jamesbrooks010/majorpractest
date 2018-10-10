@@ -27,6 +27,8 @@ public:
 	void add_new_product(std::string accname, Bank bankname, std::string CPname, double Cpvalue, int Cterm);
 	//deleters//
 	void print_list();
+	double returncash(); 
+	double returndebt(); 
 	~Customer();
 
 };

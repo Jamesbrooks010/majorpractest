@@ -13,13 +13,28 @@ economy should be able to
 needs to be done:
 Finanical product
 -creation of insurance and loan
+
+finanical product needs to change the cash and debt of customer. 
+
 Economy
 -coordinating interaction with bank
-Bank
+Bank// Bank.cpp 
 -aggregating debts
 -aggregating savings
 -profit
 -applying interest rate and crediting (or debiting) to customer
+
+
+
+Current system is not dynamic with agg sav and agg debt, 
+could be but im unsure how to do this with out some update function. 
+
+
+the time function of the economy, is currently static do we change this such that we have a function that rolls the economy forward one period, and all proceeding funcitions
+that rely on this. 
+
+
+
 
 
 

@@ -48,6 +48,17 @@ void Bank::print_customer()
 		customers_held[i].print_list();
 	}
 }
+void Bank::savingsupdate()
+{
+		aggsav = 0; 
+		aggdebt = 0; 
+	for(int g=0; g<nocustomers; g++)
+	{
+
+		aggsav = aggsav + customers_held[g].returncash(); 
+		aggdebt = aggdebt + customers_held[g].returndebt(); 
+	}
+}
 Bank::~Bank()
 {
 

@@ -12,12 +12,15 @@ class Bank// : public Economy  ____ unsure if inheriting anything from economy o
 	std::vector<Customer> customers_held; //will store an array of customers to the givven
 	double profits; // profits will be considered cash held by the bank, generated through interest charged on its assets.
 	int nocustomers; 
+	double aggsav; 
+	double aggdebt; 
 	 
 public:
 	Bank();
 	Bank(std::string Bname);
 	void print_customer();
 	void add_customer(Customer Bcustomer);
+	void savingsupdate(); 
 	~Bank();
 	//this will be the input that allows for customers to extend a new product
 
