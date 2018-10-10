@@ -1,7 +1,8 @@
-#ifndef CUSTOMER_H 
+#ifndef CUSTOMER_H  
 #define CUSTOMER_H 
 #include "Financialproduct.h"
 #include "Deposit.h"
+#include "Bank.h"
 //#include "Insurance.h"
 //#include "Loan.h"
 #include <iostream>
@@ -23,7 +24,7 @@ public:
 	Customer();
 	Customer(std::string Cname, double Cwage, double Ccash, double Cdebt);
 	//setters
-	void add_new_product(std::string CPname, double Cpvalue, int Cterm);
+	void add_new_product(std::string accname, Bank bankname, std::string CPname, double Cpvalue, int Cterm);
 	//deleters//
 	void print_list();
 	~Customer();

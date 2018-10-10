@@ -11,6 +11,7 @@ class Bank// : public Economy  ____ unsure if inheriting anything from economy o
 	std::string name; // name of bank or financial institution 
 	std::vector<Customer> customers_held; //will store an array of customers to the givven
 	double profits; // profits will be considered cash held by the bank, generated through interest charged on its assets.
+	int nocustomers; 
 	 
 public:
 	Bank();
