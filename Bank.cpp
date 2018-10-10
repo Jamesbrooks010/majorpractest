@@ -27,15 +27,20 @@ void Bank::add_customer(Customer Bcustomer)
 	{ 
 	if(customers_held[h] == Bcustomer) 
 		truecondition = 1;
+	}
 	else 
+	{
 		truecondition = 0; 
-	} 
+	}
+	
 	if (truecondition == 0) 
 	{
 	customers_held.push_back(Bcustomer);
 	cout<<"succesful add"<<endl;
 	nocustomers++; 
-	else 
+	}
+	else
+	{ 
 		cout<<"customer already in datatbase"<<endl; 
 	}
 
