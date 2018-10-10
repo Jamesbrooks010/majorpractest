@@ -11,6 +11,7 @@
 
 class Customer 
 {
+	static int count;
 	int id;
 	std::string name;
 	double wage; //wage earned per time period which can be used to pay off loan or contribute to cash, term deposit financial product 
@@ -24,6 +25,7 @@ public:
 	//setters
 	void add_new_product(std::string CPname, double Cpvalue, int Cterm);
 	//deleters//
+	void print_list();
 	~Customer();
 
 };
