@@ -1,10 +1,9 @@
 #ifndef CUSTOMER_H  
 #define CUSTOMER_H 
-
-#include "Deposit.h"
-//#include "Insurance.h"
-//#include "Loan.h"
 #include "Financialproduct.h"
+#include "Deposit.h"
+#include "Insurance.h"
+#include "Loan.h"
 #include <iostream>
 #include <string>
 #include <vector> //including vector to allocate customer
@@ -29,6 +28,7 @@ public:
 	double returncash(); 
 	double returndebt(); 
 	int get_id();
+	Financialproduct* return_list();
 	std::string get_name();
 	~Customer();
 
