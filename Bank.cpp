@@ -1,5 +1,6 @@
 #include "Bank.h"
 #include <iostream>
+#include <vector>
 using namespace std;
 //including all types of fin prod
 
@@ -85,17 +86,17 @@ void Bank::print_customer()
 }
 
 
-double Bank::set_rate(double rate, string type)
+void Bank::set_rate(double rate, string type)
 {
 	for(int i=0;i<nocustomers;i++)
 	{
-		Financialproduct* list=customer_held[i].return_list();
+		Financialproduct** list=customers_held[i].return_list();
 
-		for(int z=0;z<list.size()<z++)
+		for(int z=0;z<list->size();z++)
 		{
-			if(list[z].get_name()==type)
+			if(list[z]->get_name()==type)
 			{
-				list[z].set_rate(rate);
+				list[z]->set_rate(rate);
 			}
 		}
 	}
