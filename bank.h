@@ -1,10 +1,10 @@
  #ifndef BANK_H
-#define BANK_H 
-#include <string> 
+#define BANK_H  
 #include "Customer.h" 
+#include <vector>
+#include <string>
 //#include "Economy.h"
 //#include "Financialproduct.h"
-#include <vector>
 class Bank// : public Economy  ____ unsure if inheriting anything from economy or not
 {
 	//int bankinterestrate; // the banks interest rate, dependent on whether it is cash positive or debt positive 
@@ -13,11 +13,12 @@ class Bank// : public Economy  ____ unsure if inheriting anything from economy o
 	double profits; // profits will be considered cash held by the bank, generated through interest charged on its assets.
 	int nocustomers; 
 	double aggsav; 
-	double aggdebt; 
+	double aggdebt;
+	double interest_rate; 
 	 
 public:
 	Bank();
-	Bank(std::string Bname);
+	Bank(std::string Bname, double bankinterest_rate);
 	void print_customer();
 	void add_customer(Customer Bcustomer);
 	void savingsupdate(); 
