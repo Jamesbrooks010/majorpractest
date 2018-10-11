@@ -1,10 +1,10 @@
 #ifndef CUSTOMER_H  
 #define CUSTOMER_H 
-#include "Financialproduct.h"
-#include "Deposit.h"
 #include "Bank.h"
+#include "Deposit.h"
 //#include "Insurance.h"
 //#include "Loan.h"
+#include "Financialproduct.h"
 #include <iostream>
 #include <string>
 #include <vector> //including vector to allocate customer
@@ -24,7 +24,7 @@ public:
 	Customer();
 	Customer(std::string Cname, double Cwage, double Ccash, double Cdebt);
 	//setters
-	void add_new_product(Financialproduct accname, Bank bankname, std::string CPname, double Cpvalue, int Cterm);
+	void add_new_product(std::string accname, std::string CPname, double Cpvalue, double Cfvalue, int Cterm);
 	//deleters//
 	void print_list();
 	double returncash(); 

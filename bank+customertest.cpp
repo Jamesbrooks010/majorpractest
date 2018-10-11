@@ -4,12 +4,8 @@
 int main(void)
 {
 	Customer vince;
-	vince.add_new_product("deposit", 2.5, 2);
-	vince.add_new_product("Deposit", 2.5, 2);
-
-	Customer james;
-	james.add_new_product("Deposit",10,10);
-	james.add_new_product("depsoit",20,20);
+	vince.add_new_product("vince","deposit",2, 2.5, 2);
+	vince.add_new_product("vine","Deposit", 2, 2.5, 2);
 	
 	Bank Db;
 	Db.add_customer(vince);

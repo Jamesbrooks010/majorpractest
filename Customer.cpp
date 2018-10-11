@@ -23,7 +23,7 @@ Customer::Customer(string Cname, double Cwage, double Ccash, double Cdebt)
 }	
 
 //financial product adder
-void Customer::add_new_product(Financialproduct accname, Bank bankname, string CPname, double Cpvalue, double Cfvalue, int Cterm)
+void Customer::add_new_product(string accname, string CPname, double Cpvalue, double Cfvalue, int Cterm)
 {
 
 	if (CPname=="Deposit" || CPname=="deposit")
@@ -34,18 +34,18 @@ void Customer::add_new_product(Financialproduct accname, Bank bankname, string C
 		accname.set_fvalue(Cfvalue); 
 		accname.set_term(Cterm);
 		//name.set_bank(bank_name);
-		financialheld.push_back(name); //placing name on to vectord
-		cout<<"Thankyou a "<<CPname<<" has been successfully purchased"<<'\n';
-		bankname.add_customer(CPname); 
+		financialheld.push_back(accname); //placing name on to vectord
+		cout<<"Thankyou, a deposit has been successfully purchased"<<'\n';
+		//bankname.add_customer(CPname); 
 		debt = Cpvalue; 
 		cash = Cfvalue; 
-		bankname.savingsupdate(); 
+		//accname.savingsupdate(); 
 
 
 
 	}
 	/*
-	else if(Cname=="Deposit" || Cname="deposit")
+	else if(Cname=="Deposit" || Cname=="deposit")
 	{	
 		Deposit name;
 		name.set_name(Cname);

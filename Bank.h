@@ -1,10 +1,9 @@
  #ifndef BANK_H
-#define BANK_H 
-#include <string> 
+#define BANK_H  
 #include "Customer.h" 
+#include <vector>
 //#include "Economy.h"
 //#include "Financialproduct.h"
-#include <vector>
 class Bank// : public Economy  ____ unsure if inheriting anything from economy or not
 {
 	//int bankinterestrate; // the banks interest rate, dependent on whether it is cash positive or debt positive 

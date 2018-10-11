@@ -1,8 +1,5 @@
 #include "Bank.h"
-#include "Customer.h"
 #include <iostream>
-#include "Financialproduct.h"
-#include "Deposit.h"
 using namespace std;
 //including all types of fin prod
 
@@ -23,45 +20,50 @@ Bank::Bank(string Bname)
 void Bank::add_customer(Customer Bcustomer)
 {
 	int truecondition = 0; 
-	for (int h = 0; h < nocustomers; h++)
+	/*for (int h = 0; h < nocustomers; h++)
 	{ 
-	if(customers_held[h] == Bcustomer) 
-		truecondition = 1;
+		if(customers_held[h] == Bcustomer) 
+		{//unsure if you can use logicals on an object 
+			truecondition = 1;
+			break;
+		}
+		else 
+		{
+			truecondition = 0; 
+		}
 	}
-	else 
-	{
-		truecondition = 0; 
-	}
-	
 	if (truecondition == 0) 
 	{
-	customers_held.push_back(Bcustomer);
-	cout<<"succesful add"<<endl;
-	nocustomers++; 
+		/**/
+
+		customers_held.push_back(Bcustomer);
+		cout<<"succesful add"<<endl;
+		nocustomers++; 
+		/*
 	}
 	else
 	{ 
 		cout<<"customer already in datatbase"<<endl; 
 	}
-
+/**/
 }
 
 void Bank::print_customer()
 {
 	for(int i=0; i<nocustomers;i++)
 	{
-		customers_held[i].print_list();
+		customers_held[i]->print_list();
 	}
 }
 void Bank::savingsupdate()
 {
-		aggsav = 0; 
+		aggsav = 0;  //this will make agg sav 0 every time updated?
 		aggdebt = 0; 
 	for(int g=0; g<nocustomers; g++)
 	{
 
-		aggsav = aggsav + customers_held[g].returncash(); 
-		aggdebt = aggdebt + customers_held[g].returndebt(); 
+		aggsav = aggsav + customers_held[g]->returncash(); 
+		aggdebt = aggdebt + customers_held[g]->returndebt(); 
 	}
 }
 Bank::~Bank()
