@@ -14,14 +14,19 @@ class Bank// : public Economy  ____ unsure if inheriting anything from economy o
 	int nocustomers; 
 	double aggsav; 
 	double aggdebt;
-	double interest_rate; 
+	double interest_rate;
+	double premium;
 	 
 public:
 	Bank();
-	Bank(std::string Bname, double bankinterest_rate);
+	Bank(std::string Bname, double bankinterest_rate, double rate);
 	void print_customer();
 	void add_customer(Customer Bcustomer);
 	void savingsupdate(); 
+	void change_product(std::string product, double rate);
+	double get_rate(std::string type); 
+
+	virtual void set_rate(double rate, std::string type);
 	~Bank();
 	//this will be the input that allows for customers to extend a new product
 

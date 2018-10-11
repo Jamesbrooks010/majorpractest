@@ -1,9 +1,9 @@
 #ifndef LOAN_H
 #define LOAN_H
-#include "financialproduct"
+#include "Financialproduct.h"
 #include<string> 
 
-class Loan : public financialproduct
+class Loan : public Financialproduct
 {
 protected:
 	double Loan_interest;
@@ -11,7 +11,8 @@ protected:
 public:
 
 	Loan();
-	Loan(int rate);
-	void set_rate(int rate);
+	Loan(double rate);
+	void set_rate(double rate);
 	~Loan();
-}
+};
+#endif

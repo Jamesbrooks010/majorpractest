@@ -1,16 +1,16 @@
 #include "Loan.h"
 
-Loan::Loan()
+Loan::Loan(): Financialproduct()
 {
 	Loan_interest=0;
 }
 
-Loan::Loan(int rate)
+Loan::Loan(double rate)
 {
 	Loan_interest=rate;
 }
 
-void Loan::set_rate(int rate)
+void Loan::set_rate(double rate)
 {
 	Loan_interest=rate;
 }

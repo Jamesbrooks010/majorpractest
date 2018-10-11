@@ -5,11 +5,12 @@
 
 class Insurance : public Financialproduct
 {
-	int insurance_premium;
+	double insurance_premium;
 public:
 	//constructor
 	Insurance();
-	Insurance(int I_premium);
+	Insurance(double I_premium);
+	void set_rate(double Iprem);
 //deleterer
 	~Insurance();
 

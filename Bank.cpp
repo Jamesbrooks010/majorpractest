@@ -13,10 +13,10 @@ Bank::Bank()
 	//financial 
 	profits=0;
 	interest_rate=0;
-
+	premium=0;
 }
 
-Bank::Bank(string Bname,double bankinterest_rate)
+Bank::Bank(string Bname,double bankinterest_rate,double I_premium)
 {
 	//general//
 	name=Bname;
@@ -24,6 +24,7 @@ Bank::Bank(string Bname,double bankinterest_rate)
 	//financial//
 	profits=0;
 	interest_rate=bankinterest_rate;
+	premium=I_premium;
 
 }
 
@@ -82,6 +83,24 @@ void Bank::print_customer()
 		customers_held[i].print_list();
 	}
 }
+
+
+double Bank::set_rate(double rate, string type)
+{
+	for(int i=0;i<nocustomers;i++)
+	{
+		Financialproduct* list=customer_held[i].return_list();
+
+		for(int z=0;z<list.size()<z++)
+		{
+			if(list[z].get_name()==type)
+			{
+				list[z].set_rate(rate);
+			}
+		}
+	}
+}
+
 
 Bank::~Bank()
 {

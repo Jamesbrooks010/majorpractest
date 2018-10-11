@@ -1,5 +1,6 @@
 #include "Customer.h"
 #include <iostream>
+#include <string>
 using namespace std;
  //static use for ID
  int Customer::count=0;
@@ -46,7 +47,7 @@ void Customer::add_new_product(string accname, string CPname, double Cpvalue, do
 
 	}
 	
-	else if(Cname=="Loan" || Cname=="loan")
+	else if(CPname=="Loan" || CPname=="loan")
 	{	
 		Loan accname;
 		//sets fields of fin product
@@ -60,7 +61,7 @@ void Customer::add_new_product(string accname, string CPname, double Cpvalue, do
 		cash = Cfvalue; 
 	}
 
-	else if(Cname=="Insurance" || Cname="insurance")
+	else if(CPname=="Insurance" || CPname=="insurance")
 	{
 		Insurance accname;
 
@@ -88,6 +89,11 @@ void Customer::print_list()
 	{
 		cout<<name<<'\n';
 	}
+}
+
+Financialproduct* Customer::return_list()
+{
+	return financialheld;
 }
 double Customer::returncash()
 {
