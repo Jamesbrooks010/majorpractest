@@ -38,9 +38,9 @@ void Financialproduct::set_pvalue(double Spvalue)
 	principalvalue=Spvalue;
 }
 
-void Financialproduct::set_fvalue(double Sfvalue)
+void Financialproduct::set_fvalue()
 {
-	finalvalue=Sfvalue;
+	finalvalue=principalvalue*(1/* + a rate set by bank/**/ );
 }
 
 void Financialproduct::set_term(int Stermduration)

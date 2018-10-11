@@ -1,6 +1,6 @@
 #ifndef CUSTOMER_H  
 #define CUSTOMER_H 
-#include "Bank.h"
+
 #include "Deposit.h"
 //#include "Insurance.h"
 //#include "Loan.h"
@@ -19,10 +19,11 @@ class Customer
 	double cash; //cash held not earning interest 
 	double debt; //debt held to be repaid with interest
 	std::vector<Financialproduct> financialheld;
+	Bank* bank_of_ownership;
 	//array of financial products :: this will be pointers to products held s
 public:
 	Customer();
-	Customer(std::string Cname, double Cwage, double Ccash, double Cdebt);
+	Customer(std::string Cname, double Cwage, double Ccash, double Cdebt, Bank* Cbank);
 	//setters
 	void add_new_product(std::string accname, std::string CPname, double Cpvalue, double Cfvalue, int Cterm);
 	//deleters//

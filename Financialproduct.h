@@ -1,7 +1,7 @@
 #ifndef FINANCIALPRODUCT_H 
 #define FINANCIALPRODUCT_H
 #include <string>
-#include "Bank.h"
+
 
 //just noting that for financial products, the specific type of financial product will again be a new class
 class Financialproduct 

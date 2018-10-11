@@ -8,14 +8,17 @@ Bank::Bank()
 	string name="?";
 	profits=0;
 	nocustomers = 0; 
+	interest_rate=0;
 
 }
 
-Bank::Bank(string Bname)
+Bank::Bank(string Bname,double bankinterest_rate)
 {
 	name=Bname;
 	profits=0;
 	nocustomers = 0;
+	interest_rate=bankinterest_rate;
+
 }
 void Bank::add_customer(Customer Bcustomer)
 {
@@ -52,7 +55,7 @@ void Bank::print_customer()
 {
 	for(int i=0; i<nocustomers;i++)
 	{
-		customers_held[i]->print_list();
+		customers_held[i].print_list();
 	}
 }
 void Bank::savingsupdate()
@@ -62,8 +65,8 @@ void Bank::savingsupdate()
 	for(int g=0; g<nocustomers; g++)
 	{
 
-		aggsav = aggsav + customers_held[g]->returncash(); 
-		aggdebt = aggdebt + customers_held[g]->returndebt(); 
+		aggsav = aggsav + customers_held[g].returncash(); 
+		aggdebt = aggdebt + customers_held[g].returndebt(); 
 	}
 }
 Bank::~Bank()

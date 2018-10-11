@@ -29,17 +29,17 @@ void Customer::add_new_product(string accname, string CPname, double Cpvalue, do
 	if (CPname=="Deposit" || CPname=="deposit")
 	{
 		Deposit accname;
+		
 		accname.set_name(CPname);
 		accname.set_pvalue(Cpvalue);
 		accname.set_fvalue(Cfvalue); 
 		accname.set_term(Cterm);
-		//name.set_bank(bank_name);
+
 		financialheld.push_back(accname); //placing name on to vectord
 		cout<<"Thankyou, a deposit has been successfully purchased"<<'\n';
-		//bankname.add_customer(CPname); 
 		debt = Cpvalue; 
 		cash = Cfvalue; 
-		//accname.savingsupdate(); 
+		accname.savingsupdate(); 
 
 
 
