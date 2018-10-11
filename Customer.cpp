@@ -1,8 +1,10 @@
 #include "Customer.h"
 #include <iostream>
 using namespace std;
- 
+ //static use for ID
  int Customer::count=0;
+
+ //constructors//
 Customer::Customer()
 {
 	id=count++;
@@ -10,9 +12,9 @@ Customer::Customer()
 	wage=0;
 	cash=0;
 	debt=0;
-	//financialheld;
-
 }
+
+
 Customer::Customer(string Cname, double Cwage, double Ccash, double Cdebt)
 {
 	id=count++;
@@ -22,46 +24,56 @@ Customer::Customer(string Cname, double Cwage, double Ccash, double Cdebt)
 	debt=Cdebt;
 }	
 
-//financial product adder
+//financial product add//
 void Customer::add_new_product(string accname, string CPname, double Cpvalue, double Cfvalue, int Cterm)
 {
 
 	if (CPname=="Deposit" || CPname=="deposit")
 	{
 		Deposit accname;
-		
+		//sets fields of financial product//
 		accname.set_name(CPname);
 		accname.set_pvalue(Cpvalue);
 		accname.set_fvalue(Cfvalue); 
 		accname.set_term(Cterm);
-
-		financialheld.push_back(accname); //placing name on to vectord
+		financialheld.push_back(accname); //placing name on to vector
 		cout<<"Thankyou, a deposit has been successfully purchased"<<'\n';
 		debt = Cpvalue; 
 		cash = Cfvalue; 
-		accname.savingsupdate(); 
+
 
 
 
 	}
-	/*
-	else if(Cname=="Deposit" || Cname=="deposit")
+	
+	else if(Cname=="Loan" || Cname=="loan")
 	{	
-		Deposit name;
-		name.set_name(Cname);
-		name.set_pvalue(Cpvalue);
-		name.set_term(Cterm);	
-		cout<<"A "<<Cname<<" has been successfully purchased";
+		Loan accname;
+		//sets fields of fin product
+		accname.set_name(CPname);
+		accname.set_pvalue(Cpvalue);
+		accname.set_fvalue(Cfvalue); 
+		accname.set_term(Cterm);
+		financialheld.push_back(accname); //placing name on to vector
+		cout<<"Thankyou, a loan has been successfully purchased"<<'\n';
+		debt = Cpvalue; 
+		cash = Cfvalue; 
 	}
+
 	else if(Cname=="Insurance" || Cname="insurance")
 	{
-		Insurance name;
-		name.set_name(Cname);
-		name.set_pvalue(Cpvalue);
-		name.set_term(Cterm);
-		cout<<"A "<<Cname<<" has been successfully purchased";
+		Insurance accname;
+
+		accname.set_name(CPname);
+		accname.set_pvalue(Cpvalue);
+		accname.set_fvalue(Cfvalue); 
+		accname.set_term(Cterm);
+		financialheld.push_back(accname); //placing name on to vector
+		cout<<"Thankyou, insurance has been successfully purchased"<<'\n';
+		debt = Cpvalue; 
+		cash = Cfvalue; 
 	}
-	/**/
+	
 	else
 	{
 		cout<<"error, product not available"<<'\n';
@@ -70,17 +82,11 @@ void Customer::add_new_product(string accname, string CPname, double Cpvalue, do
 
 
 
-/*
-double Customer::print()
-{
-	cout<<cash;
-}
-/**/
 void Customer::print_list()
 {
 	for(int i=0;i<2;i++)
 	{
-		cout<<financialheld[i].get_name()<<'\n';
+		cout<<name<<'\n';
 	}
 }
 double Customer::returncash()
@@ -90,6 +96,15 @@ double Customer::returncash()
 double Customer::returndebt()
 {
 	return debt; 
+}
+
+string Customer::get_name()
+{
+	return name;
+}
+int Customer::get_id()
+{
+	return id;
 }
 
 Customer::~Customer()

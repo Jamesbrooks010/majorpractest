@@ -6,7 +6,8 @@
 class Loan : public financialproduct
 {
 protected:
-	int Loan_interest;
+	double Loan_interest;
+	
 public:
 
 	Loan();

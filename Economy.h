@@ -5,7 +5,7 @@
 
 class Economy 
 { 
-	static int timeperiod; //time period the economy is in, begining 0?, 1 , 2 , 3, 4, ::could be interpreted as years of quaters??
+	global int timeperiod; //time period the economy is in, begining 0?, 1 , 2 , 3, 4, ::could be interpreted as years of quaters??
 	std::string name; // name of economy i.e australia, america 
 	double interestrate; //global cash rate 
 	double aggsav; //all cash savings in the economy 
@@ -16,9 +16,9 @@ public:
 	Economy();
 	Economy(std::string econame); 
 //setters
-	int interestrateset(); 
+	double interestrateset(double Eirate); 
 //getters
-	int get_interestrate(); //returns interest rate
+	double get_interestrate(); //returns interest rate
 	double get_aggsav(); //returns aggregated savings
 	double get_aggdebt(); //returns aggregated debts
 

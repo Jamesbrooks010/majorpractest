@@ -3,61 +3,65 @@
 using namespace std;
 //including all types of fin prod
 
+//constructors of bank
 Bank::Bank()
 {
+	//general//
 	string name="?";
+	nocustomers = 0;
+
+	//financial 
 	profits=0;
-	nocustomers = 0; 
 	interest_rate=0;
 
 }
 
 Bank::Bank(string Bname,double bankinterest_rate)
 {
+	//general//
 	name=Bname;
-	profits=0;
 	nocustomers = 0;
+	//financial//
+	profits=0;
 	interest_rate=bankinterest_rate;
 
 }
+
+//adding customers to bank
 void Bank::add_customer(Customer Bcustomer)
 {
+
 	int truecondition = 0; 
-	/*for (int h = 0; h < nocustomers; h++)
+	for (int h = 0; h < nocustomers; h++)
 	{ 
-		if(customers_held[h] == Bcustomer) 
-		{//unsure if you can use logicals on an object 
+		if(customers_held[h].get_id() == Bcustomer.get_id()) 
+		{
 			truecondition = 1;
 			break;
 		}
+
 		else 
 		{
 			truecondition = 0; 
 		}
+
 	}
 	if (truecondition == 0) 
 	{
-		/**/
+
 
 		customers_held.push_back(Bcustomer);
 		cout<<"succesful add"<<endl;
 		nocustomers++; 
-		/*
+	
 	}
 	else
 	{ 
-		cout<<"customer already in datatbase"<<endl; 
+		cout<<"customer already in database"<<endl; 
 	}
-/**/
 }
 
-void Bank::print_customer()
-{
-	for(int i=0; i<nocustomers;i++)
-	{
-		customers_held[i].print_list();
-	}
-}
+//using bank information to update member variables
 void Bank::savingsupdate()
 {
 		aggsav = 0;  //this will make agg sav 0 every time updated?
@@ -69,7 +73,17 @@ void Bank::savingsupdate()
 		aggdebt = aggdebt + customers_held[g].returndebt(); 
 	}
 }
+
+//returning member variables of bank
+void Bank::print_customer()
+{
+	for(int i=0; i<nocustomers;i++)
+	{
+		customers_held[i].print_list();
+	}
+}
+
 Bank::~Bank()
 {
-
+//deleters
 }
