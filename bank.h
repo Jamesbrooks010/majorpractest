@@ -26,7 +26,7 @@ public:
 	void change_product(std::string product, double rate);
 	double get_rate(std::string type); 
 
-	virtual void set_rate(double rate, std::string type);
+	 void set_rate(double rate, std::string type);
 	~Bank();
 	//this will be the input that allows for customers to extend a new product
 
