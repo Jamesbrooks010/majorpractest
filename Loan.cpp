@@ -8,6 +8,7 @@ Loan::Loan(): Financialproduct()
 Loan::Loan(double rate)
 {
 	Loan_interest=rate;
+	//repaidamount = customer.returnwage() * economy.timeperiod(), (within customer)
 }
 
 void Loan::set_rate(double rate)

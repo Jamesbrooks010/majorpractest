@@ -7,6 +7,8 @@ class Loan : public Financialproduct
 {
 protected:
 	double Loan_interest;
+	// double repaidamount; function of time period * wage,
+
 	
 public:
 

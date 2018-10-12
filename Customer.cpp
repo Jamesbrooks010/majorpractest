@@ -37,7 +37,7 @@ void Customer::add_new_product(string accname, string CPname, double Cpvalue, do
 		accname.set_pvalue(Cpvalue);
 		accname.set_fvalue(Cfvalue); 
 		accname.set_term(Cterm);
-		financialheld.push_back(accname); //placing name on to vector
+		Depositsheld.push_back(accname); //placing name on to vector
 		cout<<"Thankyou, a deposit has been successfully purchased"<<'\n';
 		debt = Cpvalue; 
 		cash = Cfvalue; 
@@ -55,31 +55,31 @@ void Customer::add_new_product(string accname, string CPname, double Cpvalue, do
 		accname.set_pvalue(Cpvalue);
 		accname.set_fvalue(Cfvalue); 
 		accname.set_term(Cterm);
-		financialheld.push_back(accname); //placing name on to vector
+		Loansheld.push_back(accname); //placing name on to vector
 		cout<<"Thankyou, a loan has been successfully purchased"<<'\n';
 		debt = Cpvalue; 
 		cash = Cfvalue; 
 	}
 
-	else if(CPname=="Insurance" || CPname=="insurance")
-	{
-		Insurance accname;
-
-		accname.set_name(CPname);
-		accname.set_pvalue(Cpvalue);
-		accname.set_fvalue(Cfvalue); 
-		accname.set_term(Cterm);
-		financialheld.push_back(accname); //placing name on to vector
-		cout<<"Thankyou, insurance has been successfully purchased"<<'\n';
-		debt = Cpvalue; 
-		cash = Cfvalue; 
-	}
-	
-	else
-	{
-		cout<<"error, product not available"<<'\n';
-	}
-}
+//	else if(CPname=="Insurance" || CPname=="insurance")
+//	{
+//		Insurance accname;
+//
+//		accname.set_name(CPname);
+//		accname.set_pvalue(Cpvalue);
+//		accname.set_fvalue(Cfvalue); 
+///		accname.set_term(Cterm);
+	//	loansheld.push_back(accname); //placing name on to vector
+	//	cout<<"Thankyou, insurance has been successfully purchased"<<'\n';
+//		debt = Cpvalue; 
+//		cash = Cfvalue; 
+//	}
+//	
+//	else
+//	{
+//		cout<<"error, product not available"<<'\n';
+//	}
+//
 
 
 
@@ -91,9 +91,18 @@ void Customer::print_list()
 	}
 }
 
-Financialproduct** Customer::return_list()
+//Financialproduct** Customer::return_list() // address here chan
+//{
+//	return financialheld;
+//}
+Deposit* Customer::returnDepositsheld()
 {
-	return financialheld;
+	return Depositsheld; 
+}
+
+Loan* Customer::returnLoansheld() // return a vector of loans held by the customer 
+{
+	return Loansheld; 
 }
 double Customer::returncash()
 {

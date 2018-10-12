@@ -86,21 +86,32 @@ void Bank::print_customer()
 }
 
 
-void Bank::set_rate(double rate, string type)
+void Bank::set_rate(double rate, string type) /// need to set two lists, 
 {
 	for(int i=0;i<nocustomers;i++)
 	{
-		Financialproduct** list=customers_held[i].return_list();
+		list=customers_held[i].returnDepositsheld();
 
 		for(int z=0;z<list->size();z++)
 		{
-			if(list[z]->get_name()==type)
-			{
-				list[z]->set_rate(rate);
-			}
+			list[z].set_rate(rate); 
+	
 		}
 	}
+
+	for(int h=0;h<nocustomers:h++)
+	{
+		listl = customers_held[h].returnLoansheld(); 
+
+		for (int a =0; a<list->size();a++)
+		{
+			listl[a].set_rate(rate); 
+		}
+	}
+
+
 }
+
 
 
 Bank::~Bank()

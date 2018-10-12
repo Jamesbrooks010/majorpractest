@@ -23,6 +23,10 @@ int Economy::interestrateset()
 {
 
 }
+int Economy::settime(int timeperiodset)
+{
+	timeperiod = timeperiodset
+}
 int Economy::get_interestrate()
 {
 	return interestrate; 
@@ -34,6 +38,14 @@ double Economy::get_aggsav()
 double Economy::get_aggdebt()
 {
 	return aggdebt; 
+}
+int Economy::returntimeperiod() 
+{
+	return timeperiod;  
+}
+int Economy::moveforwardoneyear() 
+{
+	timeperiod = timeperiod + 1; 
 }
 Economy::~Economy()
 {

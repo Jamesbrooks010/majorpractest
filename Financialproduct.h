@@ -1,6 +1,7 @@
 #ifndef FINANCIALPRODUCT_H 
 #define FINANCIALPRODUCT_H
 #include <string>
+#include "Economy.h"
 
 
 //just noting that for financial products, the specific type of financial product will again be a new class
@@ -13,10 +14,13 @@ protected: //allows below to be accessed by child class (which will be the type 
 	double finalvalue;  //final value, for loan = 0 , for term deposit = 20,000 + interest
 	int termduration; // duration i.e twenty time periods or thirty
 	//Bank* financial_provider;
+	int durationperiod; // this is the period of time in which the product has exsisted for, 
+	int startingtime; 
 	
 public:
 	Financialproduct();
 	Financialproduct(std::string Fname, double Fpvalue, double Ffvalue, int Ftermduration);
+
 
 	void set_name(std::string Sname);
 	void set_pvalue(double Spvalue);
