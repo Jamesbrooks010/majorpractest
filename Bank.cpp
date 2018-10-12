@@ -90,13 +90,13 @@ void Bank::set_rate(double rate, string type)
 {
 	for(int i=0;i<nocustomers;i++)
 	{
-		Financialproduct** list=customers_held[i].return_list();
+		Financialproduct* list=customers_held[i].return_list();
 
-		for(int z=0;z<list->size();z++)
+		for(int z=0;z<customers_held[i].sizer();z++)
 		{
-			if(list[z]->get_name()==type)
+			if(list[z].get_name()==type)
 			{
-				list[z]->set_rate(rate);
+				list[z].set_rate(rate);
 			}
 		}
 	}

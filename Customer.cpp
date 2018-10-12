@@ -1,5 +1,6 @@
 #include "Customer.h"
 #include <iostream>
+#include <vector>
 #include <string>
 using namespace std;
  //static use for ID
@@ -13,6 +14,7 @@ Customer::Customer()
 	wage=0;
 	cash=0;
 	debt=0;
+	size=financialheld.size();
 }
 
 
@@ -23,6 +25,7 @@ Customer::Customer(string Cname, double Cwage, double Ccash, double Cdebt)
 	wage=Cwage;
 	cash=Ccash;
 	debt=Cdebt;
+	size=financialheld.size();
 }	
 
 //financial product add//
@@ -37,7 +40,7 @@ void Customer::add_new_product(string accname, string CPname, double Cpvalue, do
 		accname.set_pvalue(Cpvalue);
 		accname.set_fvalue(Cfvalue); 
 		accname.set_term(Cterm);
-		financialheld.push_back(accname); //placing name on to vector
+		financialheld.push_back(&accname); //placing name on to vector
 		cout<<"Thankyou, a deposit has been successfully purchased"<<'\n';
 		debt = Cpvalue; 
 		cash = Cfvalue; 
@@ -55,7 +58,7 @@ void Customer::add_new_product(string accname, string CPname, double Cpvalue, do
 		accname.set_pvalue(Cpvalue);
 		accname.set_fvalue(Cfvalue); 
 		accname.set_term(Cterm);
-		financialheld.push_back(accname); //placing name on to vector
+		financialheld.push_back(&accname); //placing name on to vector
 		cout<<"Thankyou, a loan has been successfully purchased"<<'\n';
 		debt = Cpvalue; 
 		cash = Cfvalue; 
@@ -69,7 +72,7 @@ void Customer::add_new_product(string accname, string CPname, double Cpvalue, do
 		accname.set_pvalue(Cpvalue);
 		accname.set_fvalue(Cfvalue); 
 		accname.set_term(Cterm);
-		financialheld.push_back(accname); //placing name on to vector
+		financialheld.push_back(&accname); //placing name on to vector
 		cout<<"Thankyou, insurance has been successfully purchased"<<'\n';
 		debt = Cpvalue; 
 		cash = Cfvalue; 
@@ -91,7 +94,7 @@ void Customer::print_list()
 	}
 }
 
-Financialproduct** Customer::return_list()
+Financialproduct* Customer::return_list()
 {
 	return financialheld;
 }
@@ -111,6 +114,11 @@ string Customer::get_name()
 int Customer::get_id()
 {
 	return id;
+}
+
+int Customer::sizer()
+{
+	return size;
 }
 
 Customer::~Customer()
