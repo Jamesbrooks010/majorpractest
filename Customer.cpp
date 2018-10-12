@@ -37,16 +37,16 @@ void Customer::add_new_product(string accname, string CPname, double Cpvalue, do
 		accname.set_pvalue(Cpvalue);
 		accname.set_fvalue(Cfvalue); 
 		accname.set_term(Cterm);
-		financialheld->push_back(accname); //placing name on to vector
+		financialheld.push_back(accname); //placing name on to vector
 		cout<<"Thankyou, a deposit has been successfully purchased"<<'\n';
 		debt = Cpvalue; 
 		cash = Cfvalue; 
 
 
 
-
 	}
 	
+//struggling to get object slciign working
 	else if(CPname=="Loan" || CPname=="loan")
 	{	
 		Loan accname;
@@ -55,7 +55,7 @@ void Customer::add_new_product(string accname, string CPname, double Cpvalue, do
 		accname.set_pvalue(Cpvalue);
 		accname.set_fvalue(Cfvalue); 
 		accname.set_term(Cterm);
-		financialheld->push_back(accname); //placing name on to vector
+		financialheld.push_back(accname); //placing name on to vector
 		cout<<"Thankyou, a loan has been successfully purchased"<<'\n';
 		debt = Cpvalue; 
 		cash = Cfvalue; 
@@ -69,7 +69,7 @@ void Customer::add_new_product(string accname, string CPname, double Cpvalue, do
 		accname.set_pvalue(Cpvalue);
 		accname.set_fvalue(Cfvalue); 
 		accname.set_term(Cterm);
-		financialheld->push_back(accname); //placing name on to vector
+		financialheld.push_back(accname); //placing name on to vector
 		cout<<"Thankyou, insurance has been successfully purchased"<<'\n';
 		debt = Cpvalue; 
 		cash = Cfvalue; 
@@ -91,7 +91,7 @@ void Customer::print_list()
 	}
 }
 
-Financialproduct* Customer::return_list()
+Financialproduct** Customer::return_list()
 {
 	return financialheld;
 }
