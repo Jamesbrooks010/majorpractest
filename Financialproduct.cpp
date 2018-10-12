@@ -1,4 +1,5 @@
 #include "Financialproduct.h"
+
 #include <string>
 using namespace std;
 
@@ -10,18 +11,18 @@ Financialproduct::Financialproduct()
 	finalvalue=0;
 	termduration=0;
 	durationperiod = 0; 
-	startingduration = 0;
+	startingtime = 0;
 }
 
-Financialproduct::Financialproduct(std::string Fname,double Fpvalue, double Ffvalue, int Ftermduration, Economy world)
+Financialproduct::Financialproduct(std::string Fname,double Fpvalue, double Ffvalue, int Ftermduration)
 {
 	name=Fname;
 	principalvalue=Fpvalue;
 	finalvalue=Ffvalue;
 	termduration=Ftermduration;
 	durationperiod = world.returntimeperiod() + Ftermduration; //period in which the fincial product will expire 
-	startingduration = world.returntimeperiod()  // time period inwhich this product was created 
-	period = durationperiod - startingduration; // period that the fincnancial product is within now. 
+	startingtime = world.returntimeperiod()  // time period inwhich this product was created 
+	period = durationperiod - startingtime; // period that the fincnancial product is within now. 
 }
 
 //return value to illustate polymorphism
@@ -58,7 +59,7 @@ string Financialproduct::get_name()
 
 void Financialproduct::updatetime()
 {
-	Period = (Economy.returntimeperiod - startingduration) 
+	Period = (world.returntimeperiod - startingtime) ;
 	
 
 }

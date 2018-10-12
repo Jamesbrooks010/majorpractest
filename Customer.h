@@ -2,7 +2,6 @@
 #define CUSTOMER_H 
 #include "Financialproduct.h"
 #include "Deposit.h"
-#include "Insurance.h"
 #include "Loan.h"
 #include <iostream>
 #include <string>
@@ -20,6 +19,8 @@ class Customer
 	//std::vector<Financialproduct**> financialheld; // just one, 
 	std::vector<Loan> Loansheld; 
 	std::vector<Deposit> Depositsheld; 
+	int number_of_loans;
+	int number_of_deposits;
 
 	//array of financial products :: this will be pointers to products held s
 public:
@@ -34,8 +35,8 @@ public:
 	int get_id();
 
 	//Financialproduct** return_list();
-	Deposit* returnDepositsheld(); 
-	Loan* returnLoansheld(); 
+	Deposit returnDepositsheld(); 
+	Loan returnLoansheld(); 
 	std::string get_name();
 	~Customer();
 

@@ -90,26 +90,9 @@ void Bank::set_rate(double rate, string type) /// need to set two lists,
 {
 	for(int i=0;i<nocustomers;i++)
 	{
-		list=customers_held[i].returnDepositsheld();
-
-		for(int z=0;z<list->size();z++)
-		{
-			list[z].set_rate(rate); 
-	
-		}
+		customers_held[i].returnDepositsheld().set_Drate(rate);
+		customers_held[i].returnLoansheld().set_Irate(rate); 
 	}
-
-	for(int h=0;h<nocustomers:h++)
-	{
-		listl = customers_held[h].returnLoansheld(); 
-
-		for (int a =0; a<list->size();a++)
-		{
-			listl[a].set_rate(rate); 
-		}
-	}
-
-
 }
 
 

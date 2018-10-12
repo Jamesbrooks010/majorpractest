@@ -16,7 +16,7 @@ protected: //allows below to be accessed by child class (which will be the type 
 	//Bank* financial_provider;
 	int durationperiod; // this is the period of time in which the product has exsisted for, 
 	int startingtime; 
-	
+	int Period;
 public:
 	Financialproduct();
 	Financialproduct(std::string Fname, double Fpvalue, double Ffvalue, int Ftermduration);
@@ -30,6 +30,7 @@ public:
 	//void set_bank(Bank* Sfinancial_provider);
 	//testing function
 	double get_value();
+	void updatetime();
 
 
 	~Financialproduct();

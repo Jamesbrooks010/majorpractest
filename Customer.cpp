@@ -13,6 +13,8 @@ Customer::Customer()
 	wage=0;
 	cash=0;
 	debt=0;
+	number_of_loans=0;
+	number_of_deposits=0;
 }
 
 
@@ -23,7 +25,9 @@ Customer::Customer(string Cname, double Cwage, double Ccash, double Cdebt)
 	wage=Cwage;
 	cash=Ccash;
 	debt=Cdebt;
-}	
+	number_of_loans=0;
+	number_of_deposits=0;
+}
 
 //financial product add//
 void Customer::add_new_product(string accname, string CPname, double Cpvalue, double Cfvalue, int Cterm)
@@ -41,6 +45,7 @@ void Customer::add_new_product(string accname, string CPname, double Cpvalue, do
 		cout<<"Thankyou, a deposit has been successfully purchased"<<'\n';
 		debt = Cpvalue; 
 		cash = Cfvalue; 
+		number_of_deposits++;
 
 
 
@@ -59,55 +64,37 @@ void Customer::add_new_product(string accname, string CPname, double Cpvalue, do
 		cout<<"Thankyou, a loan has been successfully purchased"<<'\n';
 		debt = Cpvalue; 
 		cash = Cfvalue; 
+		number_of_loans++;
 	}
-
-//	else if(CPname=="Insurance" || CPname=="insurance")
-//	{
-//		Insurance accname;
-//
-//		accname.set_name(CPname);
-//		accname.set_pvalue(Cpvalue);
-//		accname.set_fvalue(Cfvalue); 
-///		accname.set_term(Cterm);
-	//	loansheld.push_back(accname); //placing name on to vector
-	//	cout<<"Thankyou, insurance has been successfully purchased"<<'\n';
-//		debt = Cpvalue; 
-//		cash = Cfvalue; 
-//	}
-//	
-//	else
-//	{
-//		cout<<"error, product not available"<<'\n';
-//	}
-//
+}
 
 
 
-void Customer::print_list()
+
+
+Deposit Customer::returnDepositsheld()
 {
-	for(int i=0;i<2;i++)
+	for(int i=0;i<number_of_deposits;i++)
 	{
-		cout<<name<<'\n';
+		return Depositsheld[i];
+	}
+	
+}
+
+Loan Customer::returnLoansheld() // return a vector of loans held by the customer 
+{
+	for(int i=0;i<number_of_loans;i++)
+	{
+
+	return Loansheld[i]; 
 	}
 }
 
-//Financialproduct** Customer::return_list() // address here chan
-//{
-//	return financialheld;
-//}
-Deposit* Customer::returnDepositsheld()
-{
-	return Depositsheld; 
-}
-
-Loan* Customer::returnLoansheld() // return a vector of loans held by the customer 
-{
-	return Loansheld; 
-}
 double Customer::returncash()
 {
 	return cash; 
 }
+
 double Customer::returndebt()
 {
 	return debt; 
@@ -117,6 +104,7 @@ string Customer::get_name()
 {
 	return name;
 }
+
 int Customer::get_id()
 {
 	return id;

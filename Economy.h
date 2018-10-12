@@ -17,7 +17,7 @@ public:
 	Economy(std::string econame); 
 //setters
 	double interestrateset(double Eirate); 
-	int settime(int timeperiodset)
+	int settime(int timeperiodset);
 	
 //getters
 	double get_interestrate(); //returns interest rate

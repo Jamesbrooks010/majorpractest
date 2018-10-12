@@ -14,7 +14,7 @@ public:
 
 	Loan();
 	Loan(double rate);
-	void set_rate(double rate);
+	void set_Irate(double rate);
 	~Loan();
 };
 #endif
