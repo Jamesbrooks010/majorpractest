@@ -17,8 +17,7 @@ class Customer
 	double wage; //wage earned per time period which can be used to pay off loan or contribute to cash, term deposit financial product 
 	double cash; //cash held not earning interest 
 	double debt; //debt held to be repaid with interest
-	std::vector<Financialproduct*> financialheld;
-	int size;
+	std::vector<Financialproduct**> financialheld;
 	//array of financial products :: this will be pointers to products held s
 public:
 	Customer();
@@ -29,8 +28,8 @@ public:
 	double returncash(); 
 	double returndebt(); 
 	int get_id();
-	int sizer();
-	Financialproduct* return_list();
+
+	Financialproduct** return_list();
 	std::string get_name();
 	~Customer();
 
