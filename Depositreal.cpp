@@ -18,7 +18,7 @@ int Deposit::get_interest_rate()
 }
 void Deposit::set_Drate(double rate)
 {
-	deposit_interest_rate=rate;
+	deposit_interest_rate=(rate - .025);
 }
 
 Deposit::~Deposit()

@@ -20,9 +20,9 @@ Financialproduct::Financialproduct(std::string Fname,double Fpvalue, double Ffva
 	principalvalue=Fpvalue;
 	finalvalue=Ffvalue;
 	termduration=Ftermduration;
-	durationperiod = world.returntimeperiod() + Ftermduration; //period in which the fincial product will expire 
-	startingtime = world.returntimeperiod()  // time period inwhich this product was created 
-	period = durationperiod - startingtime; // period that the fincnancial product is within now. 
+	//durationperiod = world.returntimeperiod() + Ftermduration; //period in which the fincial product will expire 
+	//startingtime = world.returntimeperiod()  // time period inwhich this product was created 
+	//period = durationperiod - startingtime; // period that the fincnancial product is within now. 
 }
 
 //return value to illustate polymorphism
@@ -59,7 +59,7 @@ string Financialproduct::get_name()
 
 void Financialproduct::updatetime()
 {
-	Period = (world.returntimeperiod - startingtime) ;
+//	Period = (world.returntimeperiod - startingtime) ;
 	
 
 }

@@ -25,7 +25,7 @@ Customer::Customer(string Cname, double Cwage, double Ccash, double Cdebt)
 	wage=Cwage;
 	cash=Ccash;
 	debt=Cdebt;
-	number_of_loans=0;
+	number_of_loans= 0;
 	number_of_deposits=0;
 }
 
@@ -72,21 +72,21 @@ void Customer::add_new_product(string accname, string CPname, double Cpvalue, do
 
 
 
-Deposit Customer::returnDepositsheld()
+Deposit* Customer::returnDepositsheld()
 {
 	for(int i=0;i<number_of_deposits;i++)
 	{
-		return Depositsheld[i];
+		return &Depositsheld[i];
 	}
 	
 }
 
-Loan Customer::returnLoansheld() // return a vector of loans held by the customer 
+Loan* Customer::returnLoansheld() // return a vector of loans held by the customer 
 {
 	for(int i=0;i<number_of_loans;i++)
 	{
 
-	return Loansheld[i]; 
+	return &Loansheld[i]; 
 	}
 }
 

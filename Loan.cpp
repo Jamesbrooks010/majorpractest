@@ -11,9 +11,9 @@ Loan::Loan(double rate)
 	//repaidamount = customer.returnwage() * economy.timeperiod(), (within customer)
 }
 
-void Loan::set_rate(double rate)
+void Loan::set_Irate(double rate)
 {
-	Loan_interest=rate;
+	Loan_interest=(rate +.025);
 }
 
 Loan::~Loan()

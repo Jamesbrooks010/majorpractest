@@ -19,15 +19,15 @@ Economy::Economy(string econame)
 	aggsav = 0; 
 	aggdebt = 0; 
 }
-int Economy::interestrateset() 
+double Economy::interestrateset(double eirate) 
 {
 
 }
 int Economy::settime(int timeperiodset)
 {
-	timeperiod = timeperiodset
+	timeperiod = timeperiodset;
 }
-int Economy::get_interestrate()
+double Economy::get_interestrate()
 {
 	return interestrate; 
 }

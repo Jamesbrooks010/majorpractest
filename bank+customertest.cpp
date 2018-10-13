@@ -4,15 +4,16 @@
 int main(void)
 {
 	Economy world;
-	Customer vince;
-	vince.add_new_product("vince","deposit",2, 2.5, 2);
-	vince.add_new_product("vine","Deposit", 2, 2.5, 2);
-	Customer james;
-	james.add_new_product("james","deposit",2,2,2);
-	james.add_new_product("james2","deposit",2,3,1);
-	Bank Db;
-	Db.add_customer(vince);
-	Db.print_customer();
-	Db.set_rate(0.1,"depoist");
+	Customer Vince("Vince", 24, 20,0);
+	Vince.add_new_product("vince's savings deposit","deposit",0, 3000, 2);
+	Vince.add_new_product("Vinces homeloan","Loan", 20000, 0, 20);
+	Customer James("James",25,24,0);
+	James.add_new_product("James savings","deposit",0,2000,25);
+	James.add_new_product("James Loan","Loan",2000,0,10);
+	Bank Db("Db",.2,.3);
+	Db.add_customer(Vince);
+	Db.add_customer(James);
+	//Db.print_customer();
+	Db.set_rate(.1,"deposit"); // 
 
 }

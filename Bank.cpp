@@ -77,21 +77,23 @@ void Bank::savingsupdate()
 }
 
 //returning member variables of bank
-void Bank::print_customer()
-{
-	for(int i=0; i<nocustomers;i++)
-	{
-		customers_held[i].print_list();
-	}
-}
+//void Bank::print_customer()
+//{
+//	for(int i=0; i<nocustomers;i++)
+//	{
+//		customers_held[i].print_list();
+//	}
+//}
 
 
 void Bank::set_rate(double rate, string type) /// need to set two lists, 
 {
 	for(int i=0;i<nocustomers;i++)
 	{
-		customers_held[i].returnDepositsheld().set_Drate(rate);
-		customers_held[i].returnLoansheld().set_Irate(rate); 
+		customers_held[i].returnDepositsheld()->set_Drate(rate);
+
+
+		customers_held[i].returnLoansheld()->set_Irate(rate); 
 	}
 }
 
