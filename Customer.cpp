@@ -105,11 +105,22 @@ string Customer::get_name()
 	return name;
 }
 
+
 int Customer::get_id()
 {
 	return id;
 }
-
+int Customer::returnfinprodirate()
+{
+	for(int h=0; h <number_of_loans;h++)
+	{
+		cout<< Loansheld[h].get_interest_rate()<< endl; 
+	}
+	for(int i = 0; i < number_of_deposits;i++)
+	{
+		cout<< Depositsheld[i].get_interest_rate()<<endl;
+	}
+}
 Customer::~Customer()
 {
 	//deleteds

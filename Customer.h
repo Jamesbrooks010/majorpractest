@@ -40,6 +40,7 @@ public:
 	Deposit* returnDepositsheld(); 
 	Loan* returnLoansheld(); 
 	std::string get_name();
+	int returnfinprodirate(); 
 	~Customer();
 
 };

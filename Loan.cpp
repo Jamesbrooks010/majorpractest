@@ -15,7 +15,10 @@ void Loan::set_Irate(double rate)
 {
 	Loan_interest=(rate +.025);
 }
-
+int Loan::get_interest_rate()
+{
+	return Loan_interest;
+}
 Loan::~Loan()
 {
 	//del
