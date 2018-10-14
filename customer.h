@@ -20,6 +20,9 @@ class Customer
 	//std::vector<Financialproduct**> financialheld; // just one, 
 	std::vector<Loan> Loansheld; 
 	std::vector<Deposit> Depositsheld; 
+	int number_of_loans; 
+	int number_of_deposits;
+
 
 	//array of financial products :: this will be pointers to products held s
 public:
@@ -27,7 +30,7 @@ public:
 	Customer(std::string Cname, double Cwage, double Ccash, double Cdebt);
 	//setters
 	void add_new_product(std::string accname, std::string CPname, double Cpvalue, double Cfvalue, int Cterm);
-	void print_list();
+	//void print_list();
 	double returncash(); 
 	double returndebt(); 
 
