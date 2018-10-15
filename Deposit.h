@@ -14,9 +14,10 @@ public:
 
 
 	//getters
-	int get_interest_rate();
+	double get_interest_rate();
 	//setters//
 	void set_Drate(double rate);
+
 	//deleters
 	~Deposit();
 };

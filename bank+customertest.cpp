@@ -15,7 +15,7 @@ int main(void)
 	Db.add_customer(Vince);
 	Db.add_customer(James);
 	//Db.print_customer();
-	Db.set_rate(.1,"deposit"); // 
+	Db.set_rate(.300,"deposit"); // 
 
 	James.returnfinprodirate(); 
 

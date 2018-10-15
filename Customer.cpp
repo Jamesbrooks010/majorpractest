@@ -35,18 +35,18 @@ void Customer::add_new_product(string accname, string CPname, double Cpvalue, do
 
 	if (CPname=="Deposit" || CPname=="deposit")
 	{
-		Deposit accname;
+		Deposit accname(1);
 		//sets fields of financial product//
 		accname.set_name(CPname);
 		accname.set_pvalue(Cpvalue);
 		accname.set_fvalue(Cfvalue); 
 		accname.set_term(Cterm);
-		Depositsheld.push_back(accname); //placing name on to vector
+		Depositsheld.push_back(&accname); //placing name on to vector
 		cout<<"Thankyou, a deposit has been successfully purchased"<<'\n';
 		debt = Cpvalue; 
 		cash = Cfvalue; 
 		number_of_deposits++;
-
+		cout<<accname.get_interest_rate();
 
 
 	}
@@ -54,17 +54,18 @@ void Customer::add_new_product(string accname, string CPname, double Cpvalue, do
 //struggling to get object slciign working
 	else if(CPname=="Loan" || CPname=="loan")
 	{	
-		Loan accname;
+		Loan accname(1);
 		//sets fields of fin product
 		accname.set_name(CPname);
 		accname.set_pvalue(Cpvalue);
 		accname.set_fvalue(Cfvalue); 
 		accname.set_term(Cterm);
-		Loansheld.push_back(accname); //placing name on to vector
+		Loansheld.push_back(&accname); //placing name on to vector
 		cout<<"Thankyou, a loan has been successfully purchased"<<'\n';
 		debt = Cpvalue; 
 		cash = Cfvalue; 
 		number_of_loans++;
+		cout<<accname.get_interest_rate();
 	}
 }
 
@@ -72,23 +73,25 @@ void Customer::add_new_product(string accname, string CPname, double Cpvalue, do
 
 
 
-Deposit* Customer::returnDepositsheld()
-{
-	for(int i=0;i<number_of_deposits;i++)
-	{
-		return &Depositsheld[i];
-	}
-	
-}
+//Deposit* Customer::returnDepositsheld(double Drate)
+//{
 
-Loan* Customer::returnLoansheld() // return a vector of loans held by the customer 
-{
-	for(int i=0;i<number_of_loans;i++)
-	{
 
-	return &Loansheld[i]; 
-	}
-}
+//	for(int i=0;i<number_of_deposits;i++)
+//	{
+//		//return &Depositsheld[i];
+//		Depositsheld[i].set_Drate(Drate);
+//	}
+//	
+
+//Loan* Customer::returnLoansheld() // return a vector of loans held by the customer 
+//{
+//	for(int i=0;i<number_of_loans;i++)
+//	{
+//
+//	return &Loansheld[i]; 
+//	}
+//}
 
 double Customer::returncash()
 {
@@ -110,15 +113,29 @@ int Customer::get_id()
 {
 	return id;
 }
-int Customer::returnfinprodirate()
+double Customer::returnfinprodirate()
 {
 	for(int h=0; h <number_of_loans;h++)
 	{
-		cout<< Loansheld[h].get_interest_rate()<< endl; 
+		cout<< Loansheld[h]->get_interest_rate()<< endl; 
 	}
 	for(int i = 0; i < number_of_deposits;i++)
 	{
-		cout<< Depositsheld[i].get_interest_rate()<<endl;
+		cout<< Depositsheld[i]->get_interest_rate()<<endl;
+	}
+}
+void Customer::changeDrate(double rate)
+{
+	for(int i=0; i<number_of_deposits;i++)
+	{
+			Depositsheld[i]->set_Drate(rate);
+	}
+}
+void Customer::changeLrate(double rate)
+{
+	for(int z=0;z<number_of_loans;z++)
+	{
+		Loansheld[z]->set_Irate(rate);
 	}
 }
 Customer::~Customer()
