@@ -1,0 +1,7 @@
+Still to do 
+complete user input and output 
+
+aggregating debt and savings across economy 
+
+using time to rollforward and demonstrate repayment of debt, expiry of term deposit and accumulation of interest 
+
