@@ -18,8 +18,8 @@ class Customer
 	double cash; //cash held not earning interest 
 	double debt; //debt held to be repaid with interest
 	//std::vector<Financialproduct**> financialheld; // just one, 
-	std::vector<Loan> Loansheld; 
-	std::vector<Deposit> Depositsheld; 
+	std::vector<Loan*> Loansheld; 
+	std::vector<Deposit*> Depositsheld; 
 	int number_of_loans; 
 	int number_of_deposits;
 
@@ -37,9 +37,12 @@ public:
 	int get_id();
 
 	//Financialproduct** return_list();
-	Deposit* returnDepositsheld(); 
-	Loan* returnLoansheld(); 
+//	Deposit* returnDepositsheld(); 
+//	Loan* returnLoansheld(); 
 	std::string get_name();
+	double returnfinprodirate(); 
+	void changeDrate(double rate);
+	void changeLrate(double rate);
 	~Customer();
 
 };
