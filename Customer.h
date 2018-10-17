@@ -43,6 +43,7 @@ public:
 	double returnfinprodirate(); 
 	void changeDrate(double rate);
 	void changeLrate(double rate);
+	void pay_loan(double Pamount);
 	~Customer();
 
 };

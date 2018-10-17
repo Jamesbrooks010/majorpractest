@@ -138,6 +138,22 @@ void Customer::changeLrate(double rate)
 		Loansheld[z]->set_Irate(rate);
 	}
 }
+void Customer::pay_loan(double Pamount)
+{
+	double sum=0;
+	for(int i=0; i<number_of_loans; i++)
+	{
+		if(Loansheld[i]->get_value()<Pamount)
+		{
+			Pamount=Pamount-Loansheld[i]->get_value();
+			Loansheld[i]->set_pvalue(0);
+		}
+		else
+		{
+			Loansheld[i]->set_pvalue(Loansheld[i]->get_value()-Pamount);
+		}
+	}
+}
 Customer::~Customer()
 {
 	//deleteds
