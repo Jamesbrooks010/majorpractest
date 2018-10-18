@@ -37,7 +37,7 @@ void Customer::add_new_product(string accname, string CPname, double Cpvalue, do
 
 	if (CPname=="Deposit" || CPname=="deposit")
 	{
-		Deposit accname(1);
+		Deposit accname(.1);
 		//sets fields of financial product//
 		accname.set_name(CPname);
 		accname.set_pvalue(Cpvalue);
@@ -56,7 +56,7 @@ void Customer::add_new_product(string accname, string CPname, double Cpvalue, do
 //struggling to get object slciign working
 	else if(CPname=="Loan" || CPname=="loan")
 	{	
-		Loan accname(1);
+		Loan accname(.1);
 		//sets fields of fin product
 		accname.set_name(CPname);
 		accname.set_pvalue(Cpvalue);
@@ -123,7 +123,7 @@ void Customer::changeLrate(double rate)
 }
 void Customer::pay_loan()
 {
-	{
+
 		if( debt >= wage) 
 		{
 			debt = debt - wage;
@@ -135,32 +135,27 @@ void Customer::pay_loan()
 			cash = wage1;
 		} 
 
-		for(int i = 0 ; i < number_of_loans; i++)
-		{
-			Loansheld[i]->~Loan(); // this is causing a segmentation fault 
+		//for(int i = 0 ; i < number_of_loans; i++)
+		//{
+		//	Loansheld[i]->~Loan(); // this is causing a segmentation fault 
 			
-			delete Loansheld[i] //this line is causing problems 
+			 //this line is causing problems 
 			
 
-			number_of_loans = number_of_loans - 1; 
+	//		number_of_loans = number_of_loans - 1; 
 
 
-			
-		}
-	}
-
+		
 }
+
+
 void Customer::repay_deposit()
 {
 	cash = cash + credit; 
 	credit = 0; 
-	for (int i =0; i < number_of_deposits;i++)
-	{
-		Depositsheld[i]->~Deposit(); 
-		delete Depositsheld[i]; 
+	
 		number_of_deposits = number_of_deposits - 1; 
 
-	}
 }
 void Customer::addinterest()
 {

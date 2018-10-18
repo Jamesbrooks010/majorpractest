@@ -50,11 +50,25 @@ int main(void)
 	db.add_customer(vince);
 	db.add_customer(james);
 	db.add_customer(vince);
+
 	db.set_rate(.1,"deposit");
+
+
+
 	james.pay_loan();
-	db.savingsupdate();
+
+
+	
+	db.savingsupdate(); // causing problems 
+
+		james.returnfinprodirate();
+
+	
 
 	cout << "agg debt " << db.showbsdebt() << " agg credit " << db.showbscredit() << endl; 
+	db.accuminterest(); 
+	db.savingsupdate(); 
+	james.pay_loan();
 	db.accuminterest(); 
 	db.savingsupdate(); 
 
@@ -64,7 +78,15 @@ int main(void)
 	//db.set_rate(.300,"deposit"); // 
 
 
+	james.returnfinprodirate(); //these ones 
+	vince.returnfinprodirate(); 
+
+
+	db.set_rate(.1,"deposit");
+
 	james.returnfinprodirate(); 
+	vince.returnfinprodirate();
+
 	cout << (db.return_customer(1))->get_name()<< endl;  
 
 
