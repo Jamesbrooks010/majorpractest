@@ -154,6 +154,10 @@ void Customer::pay_loan(double Pamount)
 		}
 	}
 }
+
+//aggregating debts and cash on the customers balance sheet, 
+
+void Customer:: 
 Customer::~Customer()
 {
 	//deleteds
