@@ -9,10 +9,10 @@ class Bank// : public Economy  ____ unsure if inheriting anything from economy o
 {
 	//int bankinterestrate; // the banks interest rate, dependent on whether it is cash positive or debt positive 
 	std::string name; // name of bank or financial institution 
-	std::vector<Customer> customers_held; //will store an array of customers to the givven
+	std::vector<Customer*> customers_held; //will store an array of customers to the givven
 	double profits; // profits will be considered cash held by the bank, generated through interest charged on its assets.
 	int nocustomers; 
-	double aggsav; 
+	double aggcredit; 
 	double aggdebt;
 	double interest_rate;
 	double premium;
@@ -25,7 +25,9 @@ public:
 	void savingsupdate(); 
 	void change_product(std::string product, double rate);
 	double get_rate(std::string type); 
-
+	double showbsdebt();
+	double showbscredit(); 
+	Customer* return_customer(int id); 
 	void set_rate(double rate, std::string type);
 	~Bank();
 	//this will be the input that allows for customers to extend a new product
