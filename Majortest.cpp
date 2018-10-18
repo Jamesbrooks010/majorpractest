@@ -9,56 +9,60 @@ int main(void)
 	Economy b;
 	Economy c;
 
-	Bank a;
-	Bank b;
-	Bank c;
+	Bank cba;
+	Bank nab;
+	Bank westpac;
 
 	Customer ned;
 	Customer james;
 	Customer vince;
 	Customer morgan;
 
-	Deposit a;
-	Deposit b;
-	Deposit c;
+	Deposit aa;
+	Deposit bb;
+	Deposit cc;
 
-	Loan a;
-	Loan b;
-	Loan c;
+	Loan ab;
+	Loan ba;
+	Loan ca;
 
 	//test 2: cration of objects, using the specific constructor//
-	Economy d("Australia");
-	Economy e("Japan");
-	Economy f("New Zealand");
+	Economy dth("Australia");
+	Economy eht("Japan");
+	Economy fht("New Zealand");
 
-	Bank d("Bank d", 0.1,0.1);
-	Bank e("Bank e", 0.2,0.2);
-	Bank f("Bank f", 0.3,0.4);
+	Bank dasa("Bank d", 0.1,0.1);
+	Bank efd("Bank e", 0.2,0.2);
+	Bank fgf("Bank f", 0.3,0.4);
 
 	Customer jimmmy("Jimmy",1,1,1,1);
 	Customer neddy("neddy",1,1,1,1);
 	Customer vinnie("Vinnie",1,1,1,1);
 
-	Deposit d(.1);
-	Deposit e(.2);
-	Deposit f(.3);
+	Deposit dgf(.1);
+	Deposit ezs(.2);
+	Deposit fgre(.3);
 
-	Loan d(.1);
-	Loan e(.2);
-	Loan f(.3);
+	Loan dad(.1);
+	Loan esfd(.2);
+	Loan ffsd(.3);
 
 //test 3: creation of finanical products through customers
 	ned.add_new_product("neds fund","deposit",0,3000,2);
 	ned.add_new_product("neds fund","deposit",0,4000,2);
 	ned.add_new_product("neds loan","loan",10,0,0);
 //test 4: adding of customers to bank
-	b.add_customer(ned);
-	b.add_customer(james);
+	dasa.add_customer(ned);
+	fgf.add_customer(james);
 
 	//adding customer twice
-	a.add_customer(ned);
-	a.add_customer(ned);
+	efd.add_customer(ned);
+	efd.add_customer(ned);
 
+//payingoff financial products
+	ned.pay_loan();
+	ned.repay_deposit();
+//banks changing interset rates
 
-
+efd.set_rate(10);
 }

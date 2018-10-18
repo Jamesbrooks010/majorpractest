@@ -11,6 +11,7 @@
 
 class Customer 
 {
+private:
 	static int count;
 	int id;
 	std::string name;
@@ -31,21 +32,17 @@ public:
 	Customer(std::string Cname, double Cwage, double Ccash, double Cdebt, double Ccredit);
 	//setters
 	void add_new_product(std::string accname, std::string CPname, double Cpvalue, double Cfvalue, int Cterm);
-	//void print_list();
+	void changeDrate(double rate);
+	void changeLrate(double rate);
+	//getters
+	std::string get_name();
 	double returncash(); 
 	double returndebt();
 	double returncredit(); 
-
-
 	int get_id();
-
-	//Financialproduct** return_list();
-//	Deposit* returnDepositsheld(); 
-//	Loan* returnLoansheld(); 
-	std::string get_name();
 	double returnfinprodirate(); 
-	void changeDrate(double rate);
-	void changeLrate(double rate);
+	
+	//functionality
 	void pay_loan();
 	void repay_deposit(); 
 	void addinterest(); 

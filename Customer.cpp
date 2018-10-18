@@ -164,6 +164,5 @@ void Customer::addinterest()
 
 Customer::~Customer()
 {
-	//deleteds
 	
 }

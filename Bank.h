@@ -20,16 +20,18 @@ class Bank// : public Economy  ____ unsure if inheriting anything from economy o
 public:
 	Bank();
 	Bank(std::string Bname, double bankinterest_rate, double rate);
-	//void print_customer();
+	//setters//
+	void set_rate(double rate);
 	void add_customer(Customer Bcustomer);
 	void savingsupdate(); 
 	void change_product(std::string product, double rate);
+
+	//getters
 	double get_rate(std::string type); 
 	double showbsdebt();
 	double showbscredit(); 
 	Customer* return_customer(int id); 
 	void repaydeposit(std::string customer); 
-	void set_rate(double rate, std::string type);
 	void accuminterest(); 
 	
 	~Bank();

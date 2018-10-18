@@ -4,6 +4,7 @@
 
 class Deposit : public Financialproduct
 {
+private:
 	double deposit_interest_rate;
 public:
 	

@@ -63,10 +63,10 @@ void Bank::add_customer(Customer Bcustomer)
 	}
 }
 
-//using bank information to update member variables
+//thos will update the savings in the economy
 void Bank::savingsupdate()
 {
-		aggcredit = 0;  //this will make agg sav 0 every time updated?
+		aggcredit = 0;  
 		aggdebt = 0; 
 	for(int g=0; g<nocustomers; g++)
 	{
@@ -75,16 +75,13 @@ void Bank::savingsupdate()
 	}
 }
 
-
-void Bank::set_rate(double rate, string type) /// need to set two lists, 
+//this wll set the rate for deposits and loans
+void Bank::set_rate(double rate) /// need to set two lists, 
 {
 	for(int i=0;i<nocustomers;i++)
 	{
 		customers_held[i]->changeDrate(rate);
 		customers_held[i]->changeLrate(rate);
-
-
-		//customers_held[i].returnLoansheld().set_Irate(rate); 
 	}
 }
 double Bank::showbsdebt() 
@@ -139,6 +136,8 @@ void Bank::repaydeposit(string customername)
 
 
 }
+
+//this adds the interest to fin prod
 void Bank::accuminterest()
 {
 	
@@ -146,13 +145,10 @@ void Bank::accuminterest()
 	{
 
 		customers_held[i]->addinterest(); 
-
-
 	}
 
 }
 
 Bank::~Bank()
 {
-//deleters
 }

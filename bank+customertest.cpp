@@ -7,32 +7,7 @@ using namespace std;
 
 int main(void)
 {
-//inputting world economy by default
 	Economy world;
-/*
-	string customercon, Cname; 
-	double Cwage,Ccash,Cdebt; 
-//economy has been created in name a.
-
-	cout<< "would you like to create customers (y/n)?: "<< endl;
-	cin >> customercon; 
-
-		if ( customercon == "y")
-		{
-			cout<< "please enter name: "<< endl; 
-			cin>> Cname; 
-			cout<< "please enter wage" << endl; 
-			cin>> Cwage; 
-			cout<< "please enter cash"<<endl; 
-			cin>> Ccash; 
-			cout<<"please enter debt"<< endl; 
-			cin >> Cdebt; 
-		Customer name(Cname,Cwage,Ccash,Cdebt);
-			cout << Cname << " has been created"<< endl;
-
-		}
-		
-/**/
 
 	Customer vince;
 	cout<<1;

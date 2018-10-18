@@ -7,6 +7,7 @@ int main(void)
 {
 	Economy world;
 	Bank db;
+
 	string type_response;
 	cout<<"Hi there, are you a bank, or customer? "<<endl;
 	cin>>type_response;	
@@ -15,7 +16,7 @@ int main(void)
 	{
 		
 		string bank_response;
-		cout<<"would you like to change interest rates? "<<endl;
+		cout<<"would you like to change interest rates? (y/n) "<<endl;
 		cin>>bank_response;
 
 		if(bank_response=="y")
@@ -23,12 +24,7 @@ int main(void)
 			double Brate;
 			cout<<"declare rate: "<<endl;
 			cin>>Brate;
-
-			string Btype;
-			cout<<"input type of financial product "<<endl;
-			cin>>Btype;
-			
-			db.set_rate(Brate, Btype);
+			db.set_rate(Brate);
 		}
 		else if(bank_response=="n")
 		{
