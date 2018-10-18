@@ -13,18 +13,20 @@ Customer::Customer()
 	wage=0;
 	cash=0;
 	debt=0;
+	credit = 0; 
 	number_of_loans=0;
 	number_of_deposits=0;
 }
 
 
-Customer::Customer(string Cname, double Cwage, double Ccash, double Cdebt)
+Customer::Customer(string Cname, double Cwage, double Ccash, double Cdebt, double Ccredit)
 {
 	id=count++;
 	name=Cname;
 	wage=Cwage;
 	cash=Ccash;
 	debt=Cdebt;
+	credit = Ccredit; 
 	number_of_loans= 0;
 	number_of_deposits=0;
 }
@@ -42,9 +44,9 @@ void Customer::add_new_product(string accname, string CPname, double Cpvalue, do
 		accname.set_fvalue(Cfvalue); 
 		accname.set_term(Cterm);
 		Depositsheld.push_back(&accname); //placing name on to vector
-		cout<<"Thankyou, a deposit has been successfully purchased"<<'\n';
-		debt = Cpvalue; 
-		cash = Cfvalue; 
+		cout<<"Thankyou, a deposit has been successfully purchased"<<endl;
+		credit = Cfvalue; 
+		cash = Cpvalue; 
 		number_of_deposits++;
 		cout<<accname.get_interest_rate();
 
@@ -61,37 +63,15 @@ void Customer::add_new_product(string accname, string CPname, double Cpvalue, do
 		accname.set_fvalue(Cfvalue); 
 		accname.set_term(Cterm);
 		Loansheld.push_back(&accname); //placing name on to vector
-		cout<<"Thankyou, a loan has been successfully purchased"<<'\n';
+		cout<<"Thankyou, a loan has been successfully purchased"<<endl;
 		debt = Cpvalue; 
-		cash = Cfvalue; 
+		cash = Cpvalue; 
 		number_of_loans++;
 		cout<<accname.get_interest_rate();
 	}
 }
 
 
-
-
-
-//Deposit* Customer::returnDepositsheld(double Drate)
-//{
-
-
-//	for(int i=0;i<number_of_deposits;i++)
-//	{
-//		//return &Depositsheld[i];
-//		Depositsheld[i].set_Drate(Drate);
-//	}
-//	
-
-//Loan* Customer::returnLoansheld() // return a vector of loans held by the customer 
-//{
-//	for(int i=0;i<number_of_loans;i++)
-//	{
-//
-//	return &Loansheld[i]; 
-//	}
-//}
 
 double Customer::returncash()
 {
@@ -102,7 +82,10 @@ double Customer::returndebt()
 {
 	return debt; 
 }
-
+double Customer::returncredit() 
+{
+	return credit; 
+}
 string Customer::get_name()
 {
 	return name;
@@ -138,26 +121,30 @@ void Customer::changeLrate(double rate)
 		Loansheld[z]->set_Irate(rate);
 	}
 }
-void Customer::pay_loan(double Pamount)
+void Customer::pay_loan()
 {
-	double sum=0;
-	for(int i=0; i<number_of_loans; i++)
 	{
-		if(Loansheld[i]->get_value()<Pamount)
+		if( debt > wage) 
 		{
-			Pamount=Pamount-Loansheld[i]->get_value();
-			Loansheld[i]->set_pvalue(0);
+			debt = debt - wage;
 		}
 		else
 		{
-			Loansheld[i]->set_pvalue(Loansheld[i]->get_value()-Pamount);
+			int wage1 = wage - debt; 
+			debt = 0; 
+			cash = wage1; 
+			for(int i = 0 ; i < number_of_loans; i++)
+			{
+				Loansheld[i]->~Loan(); 
+				delete Loansheld[i];
+
+			}
 		}
 	}
 }
 
 //aggregating debts and cash on the customers balance sheet, 
 
-void Customer:: 
 Customer::~Customer()
 {
 	//deleteds
