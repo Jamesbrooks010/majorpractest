@@ -6,6 +6,7 @@ using namespace std;
 int main(void)
 {
 	Economy world;
+	Bank db;
 	string type_response;
 	cout<<"Hi there, are you a bank, or customer? "<<endl;
 	cin>>type_response;	
@@ -49,9 +50,9 @@ int main(void)
 		{
 			int ID;
 			cout<<"Please state your ID"<<endl;
-			cin>>ID:
+			cin>>ID;
 
-			Customer find=*return_customer(ID);
+			Customer* find=db.return_customer(ID);
 
 			string product, accname;
 			double Cpval, Cfval, Cterm;
@@ -72,16 +73,46 @@ int main(void)
 		}
 		else if(response=="n")
 		{
-			cout<<"Thank you"<<endl;
+			string response2;
+			cout<<"would you like to create an account? (y/n) "<<endl;
+			cin>>response2;
+			if(response2=="y")
+			{
+				string Cname;
+				cout<<"please state your name"<<endl;
+				cin>>Cname;
+				double Cwage, Ccash, Ccredit, Cdebt;
+				
+				cout<<"please state your wage"<<endl;
+				cin>>Cwage;
+				
+				cout<<"Please state your cash"<<endl;
+				cin>>Ccash;
+
+				cout<<"Please state your credit"<<endl;
+				cin>>Ccredit;
+
+				cout<<"Please state your debt"<<endl;
+				cin>>Cdebt;
+
+				Customer name(Cname,Cwage,Ccash,Ccredit,Cdebt);
+				cout<<"thankyou "<< Cname<<" your account has been succesfully created"<<endl;
+			}
+			else if(response2=="n")
+			{
+				cout<<"thankyou "<<endl;
+			}
 
 		}
 		else
 		{
 			cout<<"response not found"<<endl;
 		}
+	}
 	else
 	{
 		cout<<"the category stated is not available '\n' please try again, or check spelling"<<endl;
 	}
 }
+
 

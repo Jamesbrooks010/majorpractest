@@ -57,7 +57,7 @@ void Bank::add_customer(Customer Bcustomer)
 		nocustomers++; 
 	
 	}
-	else
+	else if(truecondition==1)
 	{ 
 		cout<<"customer already in database"<<endl; 
 	}

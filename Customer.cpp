@@ -135,17 +135,6 @@ void Customer::pay_loan()
 			cash = wage1;
 		} 
 
-		//for(int i = 0 ; i < number_of_loans; i++)
-		//{
-		//	Loansheld[i]->~Loan(); // this is causing a segmentation fault 
-			
-			 //this line is causing problems 
-			
-
-	//		number_of_loans = number_of_loans - 1; 
-
-
-		
 }
 
 
