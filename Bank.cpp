@@ -124,8 +124,33 @@ Customer* Bank::return_customer(int id)
 
 }
 
+void Bank::repaydeposit(string customername)
+{
+	for(int h=0; h < nocustomers; h++ )
+
+	{
+		if( customers_held[h]->get_name() == customername ) 
+		{
+			customers_held[h]->repay_deposit(); 
+		
+		cout<< "Deposit paid" << endl; 
+		}
+	}
 
 
+}
+void Bank::accuminterest()
+{
+	
+	for(int i = 0; i < nocustomers; i++ )
+	{
+
+		customers_held[i]->addinterest(); 
+
+
+	}
+
+}
 
 Bank::~Bank()
 {

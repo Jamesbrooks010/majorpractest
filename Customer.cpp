@@ -124,7 +124,7 @@ void Customer::changeLrate(double rate)
 void Customer::pay_loan()
 {
 	{
-		if( debt > wage) 
+		if( debt >= wage) 
 		{
 			debt = debt - wage;
 		}
@@ -132,15 +132,48 @@ void Customer::pay_loan()
 		{
 			int wage1 = wage - debt; 
 			debt = 0; 
-			cash = wage1; 
-			for(int i = 0 ; i < number_of_loans; i++)
-			{
-				Loansheld[i]->~Loan(); 
-				delete Loansheld[i];
+			cash = wage1;
+		} 
 
-			}
+		for(int i = 0 ; i < number_of_loans; i++)
+		{
+			Loansheld[i]->~Loan(); // this is causing a segmentation fault 
+			
+			delete Loansheld[i] //this line is causing problems 
+			
+
+			number_of_loans = number_of_loans - 1; 
+
+
+			
 		}
 	}
+
+}
+void Customer::repay_deposit()
+{
+	cash = cash + credit; 
+	credit = 0; 
+	for (int i =0; i < number_of_deposits;i++)
+	{
+		Depositsheld[i]->~Deposit(); 
+		delete Depositsheld[i]; 
+		number_of_deposits = number_of_deposits - 1; 
+
+	}
+}
+void Customer::addinterest()
+{
+	if(number_of_loans > 0 )
+	{
+		debt = debt * ( 1 + (Loansheld[0]->get_interest_rate())); 
+	}
+
+	if (number_of_deposits > 0) 
+	{
+		credit = credit * (1 + (Depositsheld[0]->get_interest_rate())); 
+	}
+
 }
 
 //aggregating debts and cash on the customers balance sheet, 

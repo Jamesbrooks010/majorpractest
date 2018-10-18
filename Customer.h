@@ -47,6 +47,10 @@ public:
 	void changeDrate(double rate);
 	void changeLrate(double rate);
 	void pay_loan();
+	void repay_deposit(); 
+	void addinterest(); 
+	
+
 
 	~Customer();
 

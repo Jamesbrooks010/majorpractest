@@ -28,7 +28,10 @@ public:
 	double showbsdebt();
 	double showbscredit(); 
 	Customer* return_customer(int id); 
+	void repaydeposit(std::string customer); 
 	void set_rate(double rate, std::string type);
+	void accuminterest(); 
+	
 	~Bank();
 	//this will be the input that allows for customers to extend a new product
 
